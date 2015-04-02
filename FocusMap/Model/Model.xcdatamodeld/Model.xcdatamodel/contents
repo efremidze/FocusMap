@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7541.6" systemVersion="14C1514" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="MVLocation" representedClassName="MVLocation" syncable="YES">
+        <attribute name="averageHeartRate" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="visits" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="MVVisit" inverseName="location" inverseEntity="MVVisit" syncable="YES"/>
+    </entity>
+    <entity name="MVVisit" representedClassName="MVVisit" syncable="YES">
+        <attribute name="arrivalDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="departureDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MVLocation" inverseName="visits" inverseEntity="MVLocation" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="MVVisit" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="MVLocation" positionX="-63" positionY="18" width="128" height="105"/>
+    </elements>
+</model>
