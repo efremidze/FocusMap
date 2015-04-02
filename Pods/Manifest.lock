@@ -1,0 +1,16 @@
+PODS:
+  - CDJSONExporter (1.0):
+    - NSData+Base64
+  - MagicalRecord/Shorthand (2.2)
+  - NSData+Base64 (1.0.0)
+
+DEPENDENCIES:
+  - CDJSONExporter (~> 1.0)
+  - MagicalRecord/Shorthand (~> 2.2)
+
+SPEC CHECKSUMS:
+  CDJSONExporter: e6474fc95698ce2178dbeaa74ec1873b4a53cdec
+  MagicalRecord: f8a56bb87ab6552f20c4bb8681a1958a197ea3cd
+  NSData+Base64: 4e84902c4db907a15673474677e57763ef3903e4
+
+COCOAPODS: 0.35.0
