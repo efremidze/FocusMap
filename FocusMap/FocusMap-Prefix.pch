@@ -1,0 +1,24 @@
+//
+//  FocusMap-Prefix.pch
+//  FocusMap
+//
+//  Created by Lasha Efremidze on 3/30/15.
+//  Copyright (c) 2015 More Voltage. All rights reserved.
+//
+
+#ifndef FocusMap_FocusMap_Prefix_pch
+#define FocusMap_FocusMap_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+@import CoreLocation;
+
+// Core Data Model
+#import "MVLocation.h"
+#import "MVVisit.h"
+
+// External Frameworks
+#define MR_SHORTHAND
+#import "CoreData+MagicalRecord.h"
+
+#endif

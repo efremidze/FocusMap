@@ -6,7 +6,32 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		8B7A73811ACB58EF002523C3 /* Mogenerator */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 8B7A73821ACB58F0002523C3 /* Build configuration list for PBXAggregateTarget "Mogenerator" */;
+			buildPhases = (
+				8B7A73851ACB5902002523C3 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Mogenerator;
+			productName = Mogenerator;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
+		8B17A98A1ACBEF0D00243D70 /* _MVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B17A9891ACBEF0D00243D70 /* _MVLocation.m */; };
+		8B17A98D1ACBEF1400243D70 /* MVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B17A98C1ACBEF1400243D70 /* MVLocation.m */; };
+		8B17A9901ACC773B00243D70 /* MVCoreDataUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B17A98F1ACC773B00243D70 /* MVCoreDataUtilities.m */; };
+		8B3BC7C21ACA04DD00A176CC /* TableInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3BC7C11ACA04DD00A176CC /* TableInterfaceController.m */; };
+		8B3BC7C41ACA354200A176CC /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3BC7C31ACA354200A176CC /* HealthKit.framework */; };
+		8B3BC7C61ACA371500A176CC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3BC7C51ACA371500A176CC /* CoreData.framework */; };
+		8B7A738C1ACB5C35002523C3 /* _MVVisit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7A73871ACB5C35002523C3 /* _MVVisit.m */; };
+		8B7A738D1ACB5C35002523C3 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B7A73881ACB5C35002523C3 /* Model.xcdatamodeld */; };
+		8B7A738E1ACB5C35002523C3 /* MVVisit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7A738B1ACB5C35002523C3 /* MVVisit.m */; };
+		8B7A73941ACB6301002523C3 /* NSManagedObjectContext+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7A73931ACB6301002523C3 /* NSManagedObjectContext+Extras.m */; };
+		8B7A73971ACB6541002523C3 /* NSManagedObject+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7A73961ACB6541002523C3 /* NSManagedObject+Extras.m */; };
 		8BC7BA011AC938AC000EC1C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC7BA001AC938AC000EC1C4 /* main.m */; };
 		8BC7BA041AC938AC000EC1C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC7BA031AC938AC000EC1C4 /* AppDelegate.m */; };
 		8BC7BA071AC938AC000EC1C4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC7BA061AC938AC000EC1C4 /* ViewController.m */; };
@@ -14,6 +39,18 @@
 		8BC7BA0C1AC938AC000EC1C4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BC7BA0B1AC938AC000EC1C4 /* Images.xcassets */; };
 		8BC7BA0F1AC938AC000EC1C4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BC7BA0D1AC938AC000EC1C4 /* LaunchScreen.xib */; };
 		8BC7BA1B1AC938AC000EC1C4 /* FocusMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC7BA1A1AC938AC000EC1C4 /* FocusMapTests.m */; };
+		8BC7BA2F1AC93901000EC1C4 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC7BA2E1AC93901000EC1C4 /* InterfaceController.m */; };
+		8BC7BA321AC93901000EC1C4 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC7BA311AC93901000EC1C4 /* NotificationController.m */; };
+		8BC7BA351AC93901000EC1C4 /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC7BA341AC93901000EC1C4 /* GlanceController.m */; };
+		8BC7BA371AC93901000EC1C4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BC7BA361AC93901000EC1C4 /* Images.xcassets */; };
+		8BC7BA3B1AC93901000EC1C4 /* FocusMap WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 8BC7BA3A1AC93901000EC1C4 /* FocusMap WatchKit App.app */; };
+		8BC7BA431AC93901000EC1C4 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BC7BA411AC93901000EC1C4 /* Interface.storyboard */; };
+		8BC7BA451AC93901000EC1C4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BC7BA441AC93901000EC1C4 /* Images.xcassets */; };
+		8BC7BA481AC93901000EC1C4 /* FocusMap WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8BC7BA281AC93901000EC1C4 /* FocusMap WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8BC7BA521AC941EF000EC1C4 /* MapInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC7BA511AC941EF000EC1C4 /* MapInterfaceController.m */; };
+		8BC7BA5C1AC9462C000EC1C4 /* MVHealthKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC7BA5B1AC9462C000EC1C4 /* MVHealthKit.m */; };
+		8BC7BA5F1AC9466C000EC1C4 /* MVLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC7BA5E1AC9466C000EC1C4 /* MVLocationManager.m */; };
+		F7AC4B5C9314236A0788C34A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B30C4EFF1A4BA403E16D04 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,9 +61,58 @@
 			remoteGlobalIDString = 8BC7B9FA1AC938AC000EC1C4;
 			remoteInfo = FocusMap;
 		};
+		8BC7BA3C1AC93901000EC1C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BC7B9F31AC938AC000EC1C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8BC7BA391AC93901000EC1C4;
+			remoteInfo = "FocusMap WatchKit App";
+		};
+		8BC7BA461AC93901000EC1C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BC7B9F31AC938AC000EC1C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8BC7BA271AC93901000EC1C4;
+			remoteInfo = "FocusMap WatchKit Extension";
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		8BC7BA4F1AC93901000EC1C4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8BC7BA481AC93901000EC1C4 /* FocusMap WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		00B30C4EFF1A4BA403E16D04 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B17A9881ACBEF0D00243D70 /* _MVLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _MVLocation.h; sourceTree = "<group>"; };
+		8B17A9891ACBEF0D00243D70 /* _MVLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _MVLocation.m; sourceTree = "<group>"; };
+		8B17A98B1ACBEF1400243D70 /* MVLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVLocation.h; sourceTree = "<group>"; };
+		8B17A98C1ACBEF1400243D70 /* MVLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVLocation.m; sourceTree = "<group>"; };
+		8B17A98E1ACC773B00243D70 /* MVCoreDataUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVCoreDataUtilities.h; sourceTree = "<group>"; };
+		8B17A98F1ACC773B00243D70 /* MVCoreDataUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVCoreDataUtilities.m; sourceTree = "<group>"; };
+		8B3BC7C01ACA04DD00A176CC /* TableInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableInterfaceController.h; sourceTree = "<group>"; };
+		8B3BC7C11ACA04DD00A176CC /* TableInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableInterfaceController.m; sourceTree = "<group>"; };
+		8B3BC7C31ACA354200A176CC /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		8B3BC7C51ACA371500A176CC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		8B3BC7C71ACA37A000A176CC /* FocusMap-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FocusMap-Prefix.pch"; sourceTree = "<group>"; };
+		8B7A73861ACB5C35002523C3 /* _MVVisit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _MVVisit.h; sourceTree = "<group>"; };
+		8B7A73871ACB5C35002523C3 /* _MVVisit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _MVVisit.m; sourceTree = "<group>"; };
+		8B7A73891ACB5C35002523C3 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		8B7A738A1ACB5C35002523C3 /* MVVisit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVisit.h; sourceTree = "<group>"; };
+		8B7A738B1ACB5C35002523C3 /* MVVisit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVisit.m; sourceTree = "<group>"; };
+		8B7A73921ACB6301002523C3 /* NSManagedObjectContext+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Extras.h"; sourceTree = "<group>"; };
+		8B7A73931ACB6301002523C3 /* NSManagedObjectContext+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+Extras.m"; sourceTree = "<group>"; };
+		8B7A73951ACB6541002523C3 /* NSManagedObject+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Extras.h"; sourceTree = "<group>"; };
+		8B7A73961ACB6541002523C3 /* NSManagedObject+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Extras.m"; sourceTree = "<group>"; };
 		8BC7B9FB1AC938AC000EC1C4 /* FocusMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FocusMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BC7B9FF1AC938AC000EC1C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BC7BA001AC938AC000EC1C4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +126,29 @@
 		8BC7BA141AC938AC000EC1C4 /* FocusMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FocusMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BC7BA191AC938AC000EC1C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BC7BA1A1AC938AC000EC1C4 /* FocusMapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FocusMapTests.m; sourceTree = "<group>"; };
+		8BC7BA281AC93901000EC1C4 /* FocusMap WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "FocusMap WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BC7BA2B1AC93901000EC1C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BC7BA2C1AC93901000EC1C4 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		8BC7BA2D1AC93901000EC1C4 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		8BC7BA2E1AC93901000EC1C4 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		8BC7BA301AC93901000EC1C4 /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
+		8BC7BA311AC93901000EC1C4 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
+		8BC7BA331AC93901000EC1C4 /* GlanceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlanceController.h; sourceTree = "<group>"; };
+		8BC7BA341AC93901000EC1C4 /* GlanceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlanceController.m; sourceTree = "<group>"; };
+		8BC7BA361AC93901000EC1C4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8BC7BA3A1AC93901000EC1C4 /* FocusMap WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FocusMap WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BC7BA401AC93901000EC1C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BC7BA421AC93901000EC1C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		8BC7BA441AC93901000EC1C4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8BC7BA501AC941EE000EC1C4 /* MapInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapInterfaceController.h; sourceTree = "<group>"; };
+		8BC7BA511AC941EF000EC1C4 /* MapInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapInterfaceController.m; sourceTree = "<group>"; };
+		8BC7BA5A1AC9462C000EC1C4 /* MVHealthKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVHealthKit.h; sourceTree = "<group>"; };
+		8BC7BA5B1AC9462C000EC1C4 /* MVHealthKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVHealthKit.m; sourceTree = "<group>"; };
+		8BC7BA5D1AC9466C000EC1C4 /* MVLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVLocationManager.h; sourceTree = "<group>"; };
+		8BC7BA5E1AC9466C000EC1C4 /* MVLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVLocationManager.m; sourceTree = "<group>"; };
+		8BC7BA651AC9476C000EC1C4 /* FocusMap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FocusMap.entitlements; sourceTree = "<group>"; };
+		9A781F2032449F6783EB278F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		DF1CAD5E23921C40B2D0CD7F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +156,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B3BC7C61ACA371500A176CC /* CoreData.framework in Frameworks */,
+				8B3BC7C41ACA354200A176CC /* HealthKit.framework in Frameworks */,
+				F7AC4B5C9314236A0788C34A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,14 +169,48 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8BC7BA251AC93901000EC1C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF86BD927984A36A4F8116AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B7A737C1ACB540D002523C3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8B17A9881ACBEF0D00243D70 /* _MVLocation.h */,
+				8B17A9891ACBEF0D00243D70 /* _MVLocation.m */,
+				8B7A73861ACB5C35002523C3 /* _MVVisit.h */,
+				8B7A73871ACB5C35002523C3 /* _MVVisit.m */,
+				8B7A73881ACB5C35002523C3 /* Model.xcdatamodeld */,
+				8B17A98B1ACBEF1400243D70 /* MVLocation.h */,
+				8B17A98C1ACBEF1400243D70 /* MVLocation.m */,
+				8B7A738A1ACB5C35002523C3 /* MVVisit.h */,
+				8B7A738B1ACB5C35002523C3 /* MVVisit.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		8BC7B9F21AC938AC000EC1C4 = {
 			isa = PBXGroup;
 			children = (
 				8BC7B9FD1AC938AC000EC1C4 /* FocusMap */,
+				8BC7BA3E1AC93901000EC1C4 /* FocusMap WatchKit App */,
+				8BC7BA291AC93901000EC1C4 /* FocusMap WatchKit Extension */,
 				8BC7BA171AC938AC000EC1C4 /* FocusMapTests */,
+				E348BADA165BB8DBC5E131C1 /* Frameworks */,
+				CE82198A3D4485FFE95787A2 /* Pods */,
 				8BC7B9FC1AC938AC000EC1C4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,6 +220,8 @@
 			children = (
 				8BC7B9FB1AC938AC000EC1C4 /* FocusMap.app */,
 				8BC7BA141AC938AC000EC1C4 /* FocusMapTests.xctest */,
+				8BC7BA281AC93901000EC1C4 /* FocusMap WatchKit Extension.appex */,
+				8BC7BA3A1AC93901000EC1C4 /* FocusMap WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,10 +229,13 @@
 		8BC7B9FD1AC938AC000EC1C4 /* FocusMap */ = {
 			isa = PBXGroup;
 			children = (
+				8BC7BA651AC9476C000EC1C4 /* FocusMap.entitlements */,
 				8BC7BA021AC938AC000EC1C4 /* AppDelegate.h */,
 				8BC7BA031AC938AC000EC1C4 /* AppDelegate.m */,
 				8BC7BA051AC938AC000EC1C4 /* ViewController.h */,
 				8BC7BA061AC938AC000EC1C4 /* ViewController.m */,
+				8B7A737C1ACB540D002523C3 /* Model */,
+				8BC7BA591AC945E7000EC1C4 /* Library */,
 				8BC7BA081AC938AC000EC1C4 /* Main.storyboard */,
 				8BC7BA0B1AC938AC000EC1C4 /* Images.xcassets */,
 				8BC7BA0D1AC938AC000EC1C4 /* LaunchScreen.xib */,
@@ -98,6 +249,7 @@
 			children = (
 				8BC7B9FF1AC938AC000EC1C4 /* Info.plist */,
 				8BC7BA001AC938AC000EC1C4 /* main.m */,
+				8B3BC7C71ACA37A000A176CC /* FocusMap-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -119,6 +271,88 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8BC7BA291AC93901000EC1C4 /* FocusMap WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8BC7BA2D1AC93901000EC1C4 /* InterfaceController.h */,
+				8BC7BA2E1AC93901000EC1C4 /* InterfaceController.m */,
+				8BC7BA501AC941EE000EC1C4 /* MapInterfaceController.h */,
+				8BC7BA511AC941EF000EC1C4 /* MapInterfaceController.m */,
+				8B3BC7C01ACA04DD00A176CC /* TableInterfaceController.h */,
+				8B3BC7C11ACA04DD00A176CC /* TableInterfaceController.m */,
+				8BC7BA331AC93901000EC1C4 /* GlanceController.h */,
+				8BC7BA341AC93901000EC1C4 /* GlanceController.m */,
+				8BC7BA301AC93901000EC1C4 /* NotificationController.h */,
+				8BC7BA311AC93901000EC1C4 /* NotificationController.m */,
+				8BC7BA361AC93901000EC1C4 /* Images.xcassets */,
+				8BC7BA2A1AC93901000EC1C4 /* Supporting Files */,
+			);
+			path = "FocusMap WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		8BC7BA2A1AC93901000EC1C4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8BC7BA2B1AC93901000EC1C4 /* Info.plist */,
+				8BC7BA2C1AC93901000EC1C4 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8BC7BA3E1AC93901000EC1C4 /* FocusMap WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				8BC7BA411AC93901000EC1C4 /* Interface.storyboard */,
+				8BC7BA441AC93901000EC1C4 /* Images.xcassets */,
+				8BC7BA3F1AC93901000EC1C4 /* Supporting Files */,
+			);
+			path = "FocusMap WatchKit App";
+			sourceTree = "<group>";
+		};
+		8BC7BA3F1AC93901000EC1C4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8BC7BA401AC93901000EC1C4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8BC7BA591AC945E7000EC1C4 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				8B17A98E1ACC773B00243D70 /* MVCoreDataUtilities.h */,
+				8B17A98F1ACC773B00243D70 /* MVCoreDataUtilities.m */,
+				8BC7BA5A1AC9462C000EC1C4 /* MVHealthKit.h */,
+				8BC7BA5B1AC9462C000EC1C4 /* MVHealthKit.m */,
+				8BC7BA5D1AC9466C000EC1C4 /* MVLocationManager.h */,
+				8BC7BA5E1AC9466C000EC1C4 /* MVLocationManager.m */,
+				8B7A73951ACB6541002523C3 /* NSManagedObject+Extras.h */,
+				8B7A73961ACB6541002523C3 /* NSManagedObject+Extras.m */,
+				8B7A73921ACB6301002523C3 /* NSManagedObjectContext+Extras.h */,
+				8B7A73931ACB6301002523C3 /* NSManagedObjectContext+Extras.m */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		CE82198A3D4485FFE95787A2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DF1CAD5E23921C40B2D0CD7F /* Pods.debug.xcconfig */,
+				9A781F2032449F6783EB278F /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E348BADA165BB8DBC5E131C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8B3BC7C51ACA371500A176CC /* CoreData.framework */,
+				8B3BC7C31ACA354200A176CC /* HealthKit.framework */,
+				00B30C4EFF1A4BA403E16D04 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,13 +360,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8BC7BA1E1AC938AC000EC1C4 /* Build configuration list for PBXNativeTarget "FocusMap" */;
 			buildPhases = (
+				AAD20544E1AA3598510CE147 /* Check Pods Manifest.lock */,
 				8BC7B9F71AC938AC000EC1C4 /* Sources */,
 				8BC7B9F81AC938AC000EC1C4 /* Frameworks */,
 				8BC7B9F91AC938AC000EC1C4 /* Resources */,
+				8BC7BA4F1AC93901000EC1C4 /* Embed App Extensions */,
+				D338A94EE249628F2321D253 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8BC7BA471AC93901000EC1C4 /* PBXTargetDependency */,
 			);
 			name = FocusMap;
 			productName = FocusMap;
@@ -157,6 +395,40 @@
 			productReference = 8BC7BA141AC938AC000EC1C4 /* FocusMapTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		8BC7BA271AC93901000EC1C4 /* FocusMap WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BC7BA4C1AC93901000EC1C4 /* Build configuration list for PBXNativeTarget "FocusMap WatchKit Extension" */;
+			buildPhases = (
+				8BC7BA241AC93901000EC1C4 /* Sources */,
+				8BC7BA251AC93901000EC1C4 /* Frameworks */,
+				8BC7BA261AC93901000EC1C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8BC7BA3D1AC93901000EC1C4 /* PBXTargetDependency */,
+			);
+			name = "FocusMap WatchKit Extension";
+			productName = "FocusMap WatchKit Extension";
+			productReference = 8BC7BA281AC93901000EC1C4 /* FocusMap WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		8BC7BA391AC93901000EC1C4 /* FocusMap WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BC7BA491AC93901000EC1C4 /* Build configuration list for PBXNativeTarget "FocusMap WatchKit App" */;
+			buildPhases = (
+				8BC7BA381AC93901000EC1C4 /* Resources */,
+				AF86BD927984A36A4F8116AD /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FocusMap WatchKit App";
+			productName = "FocusMap WatchKit App";
+			productReference = 8BC7BA3A1AC93901000EC1C4 /* FocusMap WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -166,12 +438,37 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "More Voltage";
 				TargetAttributes = {
+					8B7A73811ACB58EF002523C3 = {
+						CreatedOnToolsVersion = 6.3;
+					};
 					8BC7B9FA1AC938AC000EC1C4 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = NNRNHY2N8B;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					8BC7BA131AC938AC000EC1C4 = {
 						CreatedOnToolsVersion = 6.3;
 						TestTargetID = 8BC7B9FA1AC938AC000EC1C4;
+					};
+					8BC7BA271AC93901000EC1C4 = {
+						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = NNRNHY2N8B;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 0;
+							};
+						};
+					};
+					8BC7BA391AC93901000EC1C4 = {
+						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = NNRNHY2N8B;
 					};
 				};
 			};
@@ -190,6 +487,9 @@
 			targets = (
 				8BC7B9FA1AC938AC000EC1C4 /* FocusMap */,
 				8BC7BA131AC938AC000EC1C4 /* FocusMapTests */,
+				8BC7BA271AC93901000EC1C4 /* FocusMap WatchKit Extension */,
+				8BC7BA391AC93901000EC1C4 /* FocusMap WatchKit App */,
+				8B7A73811ACB58EF002523C3 /* Mogenerator */,
 			);
 		};
 /* End PBXProject section */
@@ -212,16 +512,90 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8BC7BA261AC93901000EC1C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BC7BA3B1AC93901000EC1C4 /* FocusMap WatchKit App.app in Resources */,
+				8BC7BA371AC93901000EC1C4 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BC7BA381AC93901000EC1C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BC7BA431AC93901000EC1C4 /* Interface.storyboard in Resources */,
+				8BC7BA451AC93901000EC1C4 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8B7A73851ACB5902002523C3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "PATH=${PATH}:/usr/local/bin\nmogenerator -m FocusMap/Model/Model.xcdatamodeld -O FocusMap/Model --template-var arc=true";
+		};
+		AAD20544E1AA3598510CE147 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D338A94EE249628F2321D253 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8BC7B9F71AC938AC000EC1C4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B7A73941ACB6301002523C3 /* NSManagedObjectContext+Extras.m in Sources */,
+				8B7A738C1ACB5C35002523C3 /* _MVVisit.m in Sources */,
+				8B17A98A1ACBEF0D00243D70 /* _MVLocation.m in Sources */,
 				8BC7BA071AC938AC000EC1C4 /* ViewController.m in Sources */,
+				8BC7BA5C1AC9462C000EC1C4 /* MVHealthKit.m in Sources */,
+				8B7A73971ACB6541002523C3 /* NSManagedObject+Extras.m in Sources */,
+				8B7A738D1ACB5C35002523C3 /* Model.xcdatamodeld in Sources */,
+				8BC7BA5F1AC9466C000EC1C4 /* MVLocationManager.m in Sources */,
 				8BC7BA041AC938AC000EC1C4 /* AppDelegate.m in Sources */,
+				8B17A9901ACC773B00243D70 /* MVCoreDataUtilities.m in Sources */,
 				8BC7BA011AC938AC000EC1C4 /* main.m in Sources */,
+				8B7A738E1ACB5C35002523C3 /* MVVisit.m in Sources */,
+				8B17A98D1ACBEF1400243D70 /* MVLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +607,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8BC7BA241AC93901000EC1C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BC7BA321AC93901000EC1C4 /* NotificationController.m in Sources */,
+				8BC7BA2F1AC93901000EC1C4 /* InterfaceController.m in Sources */,
+				8B3BC7C21ACA04DD00A176CC /* TableInterfaceController.m in Sources */,
+				8BC7BA521AC941EF000EC1C4 /* MapInterfaceController.m in Sources */,
+				8BC7BA351AC93901000EC1C4 /* GlanceController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -240,6 +626,16 @@
 			isa = PBXTargetDependency;
 			target = 8BC7B9FA1AC938AC000EC1C4 /* FocusMap */;
 			targetProxy = 8BC7BA151AC938AC000EC1C4 /* PBXContainerItemProxy */;
+		};
+		8BC7BA3D1AC93901000EC1C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8BC7BA391AC93901000EC1C4 /* FocusMap WatchKit App */;
+			targetProxy = 8BC7BA3C1AC93901000EC1C4 /* PBXContainerItemProxy */;
+		};
+		8BC7BA471AC93901000EC1C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8BC7BA271AC93901000EC1C4 /* FocusMap WatchKit Extension */;
+			targetProxy = 8BC7BA461AC93901000EC1C4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -260,9 +656,31 @@
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
+		8BC7BA411AC93901000EC1C4 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8BC7BA421AC93901000EC1C4 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8B7A73831ACB58F0002523C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8B7A73841ACB58F0002523C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		8BC7BA1C1AC938AC000EC1C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -347,8 +765,12 @@
 		};
 		8BC7BA1F1AC938AC000EC1C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF1CAD5E23921C40B2D0CD7F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FocusMap/FocusMap.entitlements;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FocusMap/FocusMap-Prefix.pch";
 				INFOPLIST_FILE = FocusMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -357,8 +779,12 @@
 		};
 		8BC7BA201AC938AC000EC1C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A781F2032449F6783EB278F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FocusMap/FocusMap.entitlements;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FocusMap/FocusMap-Prefix.pch";
 				INFOPLIST_FILE = FocusMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -399,9 +825,76 @@
 			};
 			name = Release;
 		};
+		8BC7BA4A1AC93901000EC1C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = FocusMap_WatchKit_Extension;
+				INFOPLIST_FILE = "FocusMap WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		8BC7BA4B1AC93901000EC1C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IBSC_MODULE = FocusMap_WatchKit_Extension;
+				INFOPLIST_FILE = "FocusMap WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		8BC7BA4D1AC93901000EC1C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "FocusMap WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		8BC7BA4E1AC93901000EC1C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "FocusMap WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8B7A73821ACB58F0002523C3 /* Build configuration list for PBXAggregateTarget "Mogenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B7A73831ACB58F0002523C3 /* Debug */,
+				8B7A73841ACB58F0002523C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8BC7B9F61AC938AC000EC1C4 /* Build configuration list for PBXProject "FocusMap" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -418,6 +911,7 @@
 				8BC7BA201AC938AC000EC1C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8BC7BA211AC938AC000EC1C4 /* Build configuration list for PBXNativeTarget "FocusMapTests" */ = {
 			isa = XCConfigurationList;
@@ -426,8 +920,40 @@
 				8BC7BA231AC938AC000EC1C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BC7BA491AC93901000EC1C4 /* Build configuration list for PBXNativeTarget "FocusMap WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BC7BA4A1AC93901000EC1C4 /* Debug */,
+				8BC7BA4B1AC93901000EC1C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BC7BA4C1AC93901000EC1C4 /* Build configuration list for PBXNativeTarget "FocusMap WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BC7BA4D1AC93901000EC1C4 /* Debug */,
+				8BC7BA4E1AC93901000EC1C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8B7A73881ACB5C35002523C3 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8B7A73891ACB5C35002523C3 /* Model.xcdatamodel */,
+			);
+			currentVersion = 8B7A73891ACB5C35002523C3 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8BC7B9F31AC938AC000EC1C4 /* Project object */;
 }
