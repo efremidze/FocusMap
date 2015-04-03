@@ -10,4 +10,12 @@
 
 @interface MVCoreDataUtilities : NSObject
 
+@property (nonatomic, strong) NSArray *locations;
+
++ (instancetype)sharedInstance;
+
+- (void)fetchLocationsWithCompletion:(void (^)(NSArray *locations))completion;
+
++ (NSData *)JSONData;
+
 @end

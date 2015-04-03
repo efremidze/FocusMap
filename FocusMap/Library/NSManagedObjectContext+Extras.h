@@ -10,6 +10,8 @@
 
 @interface NSManagedObjectContext (Extras)
 
++ (NSManagedObjectContext *)defaultContext;
+
 + (NSManagedObjectContext *)backgroundContext;
 
 @end

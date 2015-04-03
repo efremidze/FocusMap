@@ -54,7 +54,7 @@
         // User has arrived, but not left, the location
     } else {
         // The visit is complete
-        NSManagedObjectContext *context = [NSManagedObjectContext MR_rootSavingContext];
+        NSManagedObjectContext *context = [NSManagedObjectContext defaultContext];
         MVLocation *l = [MVLocation createLocationWithCoordinate:visit.coordinate inContext:context];
         
         MVVisit *v = [MVVisit createVisitWithArrivalDate:visit.arrivalDate departureDate:visit.departureDate inContext:context];

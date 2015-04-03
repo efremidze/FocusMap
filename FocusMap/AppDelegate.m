@@ -11,7 +11,8 @@
 #import "MVLocationManager.h"
 #import "MVHealthKit.h"
 
-#import "NSManagedObject+Extras.h"
+#import "MVCoreDataUtilities.h"
+
 #import "CDJSONExporter.h"
 
 @import MessageUI;
@@ -25,7 +26,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Magical Record
-    [MagicalRecord setupAutoMigratingCoreDataStack];
+    NSURL *storeURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.focusMap.Documents"];
+    storeURL = [storeURL URLByAppendingPathComponent:@"db.sqlite"];
+    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreAtURL:storeURL];
     
     UIUserNotificationSettings *userNotificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:userNotificationSettings];
@@ -35,46 +38,7 @@
     [self initHealthKit];
     [self initLocationManager];
     
-    // TEMP
-    [[MVVisit findAll] makeObjectsPerformSelector:@selector(logAsString)];
-    
-    NSLog(@"------->");
-    
-//    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(34.0157875860952, -118.4462193827858);
-//    MVLocation *location = [MVLocation createLocationWithCoordinate:coordinate inContext:context];
-//    [location logAsString];
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSManagedObjectContext *context = [NSManagedObjectContext MR_rootSavingContext];
-        NSFetchRequest *request = [MVLocation requestAllInContext:context];
-        [request setRelationshipKeyPathsForPrefetching:@[NSStringFromSelector(@selector(visits))]];
-        NSArray *locations = [MVLocation executeFetchRequest:request inContext:context];
-        for (MVLocation *location in locations) {
-            [location logAsString];
-            
-            NSMutableArray *array = [NSMutableArray arrayWithCapacity:location.visits.count];
-            for (MVVisit *visit in location.visits) {
-                [visit logAsString];
-                
-                dispatch_semaphore_t sema = dispatch_semaphore_create(0);
-                [[MVHealthKit sharedInstance] fetchAverageHeartRateWithStartDate:visit.arrivalDate endDate:visit.departureDate completionHandler:^(double averageHeartRate, NSError *error) {
-                    [array addObject:@(averageHeartRate)];
-                    dispatch_semaphore_signal(sema);
-                }];
-                dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
-            }
-            NSNumber *average = [array valueForKeyPath:@"@avg.doubleValue"];
-            NSLog(@"average = %@", average);
-            location.averageHeartRate = average;
-        }
-        [context saveToPersistentStoreAndWait];
-    });
-    
-    // start observing location changes using a sharedInstance
-    // pull heart rate info from health kit
-    
-    // combine location and heart rate info (how?)
-    // separate heart rate data into intervals, based on location changes, log location changes to know the interval of stay in the same location
+    [[MVLocation findAll] makeObjectsPerformSelector:@selector(logAsString)];
     
     return YES;
 }
@@ -167,15 +131,20 @@
 
 #pragma mark -
 
+- (void)importData
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"core_data.json"];
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    [CDJSONExporter importData:data toContext:[NSManagedObjectContext defaultContext] clear:YES];
+}
+
 - (void)exportData
 {
-    NSManagedObjectContext *context = [NSManagedObjectContext MR_rootSavingContext];
-    NSData *data = [CDJSONExporter exportContext:context auxiliaryInfo:nil];
-    NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"jsonString %@", jsonString);
-    
+    NSData *data = [MVCoreDataUtilities JSONData];
     MFMailComposeViewController *viewController = [[MFMailComposeViewController alloc] initWithNibName:nil bundle:nil];
-    [viewController addAttachmentData:data mimeType:@"application/json" fileName:@"Core Data JSON"];
+    [viewController addAttachmentData:data mimeType:@"application/json" fileName:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"]];
     [self.window.rootViewController presentViewController:viewController animated:YES completion:nil];
 }
 

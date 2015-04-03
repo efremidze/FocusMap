@@ -1,6 +1,6 @@
 #import "MVLocation.h"
 
-static double const kDegrees = 0.00001;
+static double const kDegrees = 0.001;
 
 @interface MVLocation ()
 
@@ -34,7 +34,6 @@ static double const kDegrees = 0.00001;
                                        NSStringFromSelector(@selector(longitude)),
                                        @(coordinate.longitude + kDegrees)];
     NSCompoundPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[latitudePredicate, longitudePredicate]];
-    NSLog(@"predicate %@", predicate);
     NSFetchRequest *request = [MVLocation requestFirstWithPredicate:predicate inContext:context];
     [request setRelationshipKeyPathsForPrefetching:@[NSStringFromSelector(@selector(visits))]];
     return [MVLocation MR_executeFetchRequestAndReturnFirstObject:request inContext:context];

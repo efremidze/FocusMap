@@ -104,6 +104,7 @@
 		8B3BC7C31ACA354200A176CC /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		8B3BC7C51ACA371500A176CC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8B3BC7C71ACA37A000A176CC /* FocusMap-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FocusMap-Prefix.pch"; sourceTree = "<group>"; };
+		8B4508E31ACE1CEE00D18587 /* FocusMap WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "FocusMap WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		8B7A73861ACB5C35002523C3 /* _MVVisit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _MVVisit.h; sourceTree = "<group>"; };
 		8B7A73871ACB5C35002523C3 /* _MVVisit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _MVVisit.m; sourceTree = "<group>"; };
 		8B7A73891ACB5C35002523C3 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -274,6 +275,7 @@
 		8BC7BA291AC93901000EC1C4 /* FocusMap WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				8B4508E31ACE1CEE00D18587 /* FocusMap WatchKit Extension.entitlements */,
 				8BC7BA2D1AC93901000EC1C4 /* InterfaceController.h */,
 				8BC7BA2E1AC93901000EC1C4 /* InterfaceController.m */,
 				8BC7BA501AC941EE000EC1C4 /* MapInterfaceController.h */,
@@ -445,6 +447,9 @@
 						CreatedOnToolsVersion = 6.3;
 						DevelopmentTeam = NNRNHY2N8B;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
@@ -461,6 +466,9 @@
 						CreatedOnToolsVersion = 6.3;
 						DevelopmentTeam = NNRNHY2N8B;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.HealthKit = {
 								enabled = 0;
 							};
@@ -769,11 +777,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FocusMap/FocusMap.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FocusMap/FocusMap-Prefix.pch";
 				INFOPLIST_FILE = FocusMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -783,11 +794,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FocusMap/FocusMap.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FocusMap/FocusMap-Prefix.pch";
 				INFOPLIST_FILE = FocusMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -862,6 +876,9 @@
 		8BC7BA4D1AC93901000EC1C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "FocusMap WatchKit Extension/FocusMap WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -869,6 +886,7 @@
 				INFOPLIST_FILE = "FocusMap WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -876,9 +894,13 @@
 		8BC7BA4E1AC93901000EC1C4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "FocusMap WatchKit Extension/FocusMap WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "FocusMap WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

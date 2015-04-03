@@ -10,6 +10,11 @@
 
 @implementation NSManagedObjectContext (Extras)
 
++ (NSManagedObjectContext *)defaultContext
+{
+    return [NSManagedObjectContext MR_rootSavingContext];
+}
+
 + (NSManagedObjectContext *)backgroundContext;
 {
     static NSManagedObjectContext *_sharedInstance = nil;
