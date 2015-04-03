@@ -23,6 +23,21 @@
     return _sharedInstance;
 }
 
+- (instancetype)init
+{
+    if (self = [super init]) {
+        [self setupCoreDataStack];
+    }
+    return self;
+}
+
+- (void)setupCoreDataStack
+{
+    NSURL *storeURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.focusMap.Documents"];
+    storeURL = [storeURL URLByAppendingPathComponent:@"db.sqlite"];
+    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreAtURL:storeURL];
+}
+
 #pragma mark -
 
 - (NSArray *)locations

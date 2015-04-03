@@ -14,7 +14,7 @@ static double const kDegrees = 0.001;
 {
     MVLocation *location = [MVLocation locationWithCoordinate:coordinate inContext:context];
     if (!location) {
-        location = [MVLocation createInContext:context];
+        location = [MVLocation createEntityInContext:context];
         location.latitudeValue = coordinate.latitude;
         location.longitudeValue = coordinate.longitude;
     }
