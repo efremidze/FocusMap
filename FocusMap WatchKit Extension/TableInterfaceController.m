@@ -7,14 +7,25 @@
 //
 
 #import "TableInterfaceController.h"
+#import "TableRowInterfaceController.h"
+#import "MVLocation.h"
 
 @interface TableInterfaceController ()
 
 @property (nonatomic, weak) IBOutlet WKInterfaceTable *table;
 
+@property (nonatomic, strong) NSArray *locations;
+
 @end
 
 @implementation TableInterfaceController
+
+- (instancetype)init
+{
+    if (self = [super init]) {
+    }
+    return self;
+}
 
 - (void)awakeWithContext:(id)context
 {
@@ -33,6 +44,18 @@
 {
     // This method is called when watch view controller is no longer visible
     [super didDeactivate];
+}
+
+- (void)loadTableRows
+{
+    [self.table setNumberOfRows:self.locations.count withRowType:@"default"];
+    
+    // Create all of the table rows.
+    [self.locations enumerateObjectsUsingBlock:^(MVLocation *location, NSUInteger idx, BOOL *stop) {
+        TableRowInterfaceController *row = [self.table rowControllerAtIndex:idx];
+        row.textLabel.text = [NSString stringWithFormat:@"%f %f", location.latitudeValue, location.longitudeValue];
+        row.detailTextLabel.text = [NSString stringWithFormat:@"%f", location.averageHeartRateValue];
+    }];
 }
 
 @end

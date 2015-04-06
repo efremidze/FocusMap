@@ -29,7 +29,6 @@
     if (!_locationManager && [CLLocationManager locationServicesEnabled]) {
         _locationManager = [CLLocationManager new];
         _locationManager.delegate = self;
-        _locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
         [_locationManager requestAlwaysAuthorization];
     }
     return _locationManager;

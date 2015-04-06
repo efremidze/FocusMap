@@ -25,6 +25,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[MVCoreDataUtilities sharedInstance] locations];
+    
     UIUserNotificationSettings *userNotificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:userNotificationSettings];
     
@@ -137,7 +139,8 @@
 
 - (void)exportData
 {
-    NSData *data = [MVCoreDataUtilities JSONData];
+    NSManagedObjectContext *context = [NSManagedObjectContext defaultContext];
+    NSData *data = [CDJSONExporter exportContext:context auxiliaryInfo:nil];
     MFMailComposeViewController *viewController = [[MFMailComposeViewController alloc] initWithNibName:nil bundle:nil];
     [viewController addAttachmentData:data mimeType:@"application/json" fileName:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"]];
     [self.window.rootViewController presentViewController:viewController animated:YES completion:nil];

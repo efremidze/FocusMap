@@ -16,6 +16,4 @@
 
 - (void)fetchLocationsWithCompletion:(void (^)(NSArray *locations))completion;
 
-+ (NSData *)JSONData;
-
 @end

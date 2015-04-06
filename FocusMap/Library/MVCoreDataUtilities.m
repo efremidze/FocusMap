@@ -8,7 +8,6 @@
 
 #import "MVCoreDataUtilities.h"
 #import "NSManagedObject+Extras.h"
-#import "CDJSONExporter.h"
 #import "MVHealthKit.h"
 
 @implementation MVCoreDataUtilities
@@ -80,14 +79,6 @@
             if (completion) completion(locations);
         }];
     });
-}
-
-#pragma mark -
-
-+ (NSData *)JSONData;
-{
-    NSManagedObjectContext *context = [NSManagedObjectContext defaultContext];
-    return [CDJSONExporter exportContext:context auxiliaryInfo:nil];
 }
 
 @end

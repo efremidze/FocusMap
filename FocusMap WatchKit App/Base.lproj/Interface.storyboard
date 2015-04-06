@@ -19,12 +19,25 @@
                     <items>
                         <table alignment="left" id="x0e-G9-Yz7">
                             <items>
-                                <tableRow id="SPq-AL-AZx">
-                                    <group key="rootItem" width="1" alignment="left" id="kJ7-2o-9fz"/>
+                                <tableRow id="SPq-AL-AZx" customClass="TableRowInterfaceController">
+                                    <group key="rootItem" width="1" alignment="left" id="kJ7-2o-9fz">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Label" id="QQ3-kn-VD7"/>
+                                            <imageView width="20" height="20" alignment="right" verticalAlignment="center" image="heart" id="KrD-qK-iFy"/>
+                                            <label alignment="right" verticalAlignment="center" text="Label" id="bTp-GN-S5i"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="detailTextLabel" destination="bTp-GN-S5i" id="p2B-d7-usI"/>
+                                        <outlet property="textLabel" destination="QQ3-kn-VD7" id="8t9-NB-ReK"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>
                     </items>
+                    <connections>
+                        <outlet property="table" destination="x0e-G9-Yz7" id="BVk-jx-1Yn"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="436" y="347"/>
@@ -34,7 +47,7 @@
             <objects>
                 <controller identifier="map" id="Jch-og-4t3" customClass="MapInterfaceController">
                     <items>
-                        <map alignment="left" id="iXz-GP-L3p"/>
+                        <map alignment="center" verticalAlignment="center" id="iXz-GP-L3p"/>
                     </items>
                 </controller>
             </objects>

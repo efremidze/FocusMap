@@ -21,9 +21,11 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		5572052D3D9EF29D3C40B217 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B30C4EFF1A4BA403E16D04 /* libPods.a */; };
 		8B17A98A1ACBEF0D00243D70 /* _MVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B17A9891ACBEF0D00243D70 /* _MVLocation.m */; };
 		8B17A98D1ACBEF1400243D70 /* MVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B17A98C1ACBEF1400243D70 /* MVLocation.m */; };
 		8B17A9901ACC773B00243D70 /* MVCoreDataUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B17A98F1ACC773B00243D70 /* MVCoreDataUtilities.m */; };
+		8B26459F1AD21A6100B16D3B /* TableRowInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B26459E1AD21A6100B16D3B /* TableRowInterfaceController.m */; };
 		8B3BC7C21ACA04DD00A176CC /* TableInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3BC7C11ACA04DD00A176CC /* TableInterfaceController.m */; };
 		8B3BC7C41ACA354200A176CC /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3BC7C31ACA354200A176CC /* HealthKit.framework */; };
 		8B3BC7C61ACA371500A176CC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3BC7C51ACA371500A176CC /* CoreData.framework */; };
@@ -99,6 +101,8 @@
 		8B17A98C1ACBEF1400243D70 /* MVLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVLocation.m; sourceTree = "<group>"; };
 		8B17A98E1ACC773B00243D70 /* MVCoreDataUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVCoreDataUtilities.h; sourceTree = "<group>"; };
 		8B17A98F1ACC773B00243D70 /* MVCoreDataUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVCoreDataUtilities.m; sourceTree = "<group>"; };
+		8B26459D1AD21A6100B16D3B /* TableRowInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableRowInterfaceController.h; sourceTree = "<group>"; };
+		8B26459E1AD21A6100B16D3B /* TableRowInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableRowInterfaceController.m; sourceTree = "<group>"; };
 		8B3BC7C01ACA04DD00A176CC /* TableInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableInterfaceController.h; sourceTree = "<group>"; };
 		8B3BC7C11ACA04DD00A176CC /* TableInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableInterfaceController.m; sourceTree = "<group>"; };
 		8B3BC7C31ACA354200A176CC /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
@@ -174,6 +178,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5572052D3D9EF29D3C40B217 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,18 +281,20 @@
 			isa = PBXGroup;
 			children = (
 				8B4508E31ACE1CEE00D18587 /* FocusMap WatchKit Extension.entitlements */,
+				8BC7BA331AC93901000EC1C4 /* GlanceController.h */,
+				8BC7BA341AC93901000EC1C4 /* GlanceController.m */,
+				8BC7BA361AC93901000EC1C4 /* Images.xcassets */,
 				8BC7BA2D1AC93901000EC1C4 /* InterfaceController.h */,
 				8BC7BA2E1AC93901000EC1C4 /* InterfaceController.m */,
 				8BC7BA501AC941EE000EC1C4 /* MapInterfaceController.h */,
 				8BC7BA511AC941EF000EC1C4 /* MapInterfaceController.m */,
-				8B3BC7C01ACA04DD00A176CC /* TableInterfaceController.h */,
-				8B3BC7C11ACA04DD00A176CC /* TableInterfaceController.m */,
-				8BC7BA331AC93901000EC1C4 /* GlanceController.h */,
-				8BC7BA341AC93901000EC1C4 /* GlanceController.m */,
 				8BC7BA301AC93901000EC1C4 /* NotificationController.h */,
 				8BC7BA311AC93901000EC1C4 /* NotificationController.m */,
-				8BC7BA361AC93901000EC1C4 /* Images.xcassets */,
 				8BC7BA2A1AC93901000EC1C4 /* Supporting Files */,
+				8B3BC7C01ACA04DD00A176CC /* TableInterfaceController.h */,
+				8B3BC7C11ACA04DD00A176CC /* TableInterfaceController.m */,
+				8B26459D1AD21A6100B16D3B /* TableRowInterfaceController.h */,
+				8B26459E1AD21A6100B16D3B /* TableRowInterfaceController.m */,
 			);
 			path = "FocusMap WatchKit Extension";
 			sourceTree = "<group>";
@@ -401,9 +408,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8BC7BA4C1AC93901000EC1C4 /* Build configuration list for PBXNativeTarget "FocusMap WatchKit Extension" */;
 			buildPhases = (
+				8B4687A477B3A39776D7BF84 /* Check Pods Manifest.lock */,
 				8BC7BA241AC93901000EC1C4 /* Sources */,
 				8BC7BA251AC93901000EC1C4 /* Frameworks */,
 				8BC7BA261AC93901000EC1C4 /* Resources */,
+				452557AC42A495EA2AD821BC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -541,6 +550,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		452557AC42A495EA2AD821BC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B4687A477B3A39776D7BF84 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		8B7A73851ACB5902002523C3 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -624,6 +663,7 @@
 				8B3BC7C21ACA04DD00A176CC /* TableInterfaceController.m in Sources */,
 				8BC7BA521AC941EF000EC1C4 /* MapInterfaceController.m in Sources */,
 				8BC7BA351AC93901000EC1C4 /* GlanceController.m in Sources */,
+				8B26459F1AD21A6100B16D3B /* TableRowInterfaceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -867,6 +907,7 @@
 		};
 		8BC7BA4D1AC93901000EC1C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF1CAD5E23921C40B2D0CD7F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "FocusMap WatchKit Extension/FocusMap WatchKit Extension.entitlements";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -882,6 +923,7 @@
 		};
 		8BC7BA4E1AC93901000EC1C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A781F2032449F6783EB278F /* Pods.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "FocusMap WatchKit Extension/FocusMap WatchKit Extension.entitlements";
 				INFOPLIST_FILE = "FocusMap WatchKit Extension/Info.plist";
