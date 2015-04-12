@@ -7,29 +7,32 @@
 //
 
 #import "InterfaceController.h"
+#import "MVLocation.h"
 
 @interface InterfaceController()
+
+@property (nonatomic, strong) NSArray *locations;
 
 @end
 
 @implementation InterfaceController
+
+- (instancetype)init
+{
+    if (self = [super init]) {
+        self.locations = @[];
+        
+        [self loadMap];
+    }
+    return self;
+}
 
 - (void)awakeWithContext:(id)context
 {
     [super awakeWithContext:context];
     
     // Configure interface objects here.
-    NSMutableArray *names = [NSMutableArray array];
-    NSMutableArray *contexts = [NSMutableArray array];
-    
-    [names addObject:@"table"];
-    [contexts addObject:@0];
-    
-    [names addObject:@"map"];
-    [contexts addObject:@1];
-    
-//    [WKInterfaceController reloadRootControllersWithNames:names contexts:contexts];
-    [WKInterfaceController reloadRootControllersWithNames:names contexts:nil];
+    [WKInterfaceController reloadRootControllersWithNames:@[@"table", @"map"] contexts:nil];
 }
 
 - (void)willActivate
@@ -44,6 +47,12 @@
 {
     // This method is called when watch view controller is no longer visible
     [super didDeactivate];
+}
+
+- (void)loadMap
+{
+    // add annotations
+    // set region
 }
 
 @end

@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>FocusMapKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
 		<key>Glance - FocusMap WatchKit App.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -32,6 +37,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>8B2F25E81AD3205300187FD8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8B2F25F21AD3205300187FD8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>8B7A73811ACB58EF002523C3</key>
 		<dict>
 			<key>primary</key>

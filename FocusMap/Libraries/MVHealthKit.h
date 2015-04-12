@@ -18,6 +18,6 @@
 
 - (void)requestAuthorizationWithCompletion:(void (^)(BOOL success, NSError *error))completion;
 
-- (void)fetchAverageHeartRateWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate completionHandler:(void (^)(double, NSError *))completionHandler;
+- (void)fetchAverageHeartRateWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate completion:(void (^)(double, NSError *))completion;
 
 @end

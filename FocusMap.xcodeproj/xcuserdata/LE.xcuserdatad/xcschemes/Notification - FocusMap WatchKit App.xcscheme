@@ -48,6 +48,20 @@
                ReferencedContainer = "container:FocusMap.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8B2F25F21AD3205300187FD8"
+               BuildableName = "FocusMapKitTests.xctest"
+               BlueprintName = "FocusMapKitTests"
+               ReferencedContainer = "container:FocusMap.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -56,6 +70,16 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8B2F25F21AD3205300187FD8"
+               BuildableName = "FocusMapKitTests.xctest"
+               BlueprintName = "FocusMapKitTests"
+               ReferencedContainer = "container:FocusMap.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

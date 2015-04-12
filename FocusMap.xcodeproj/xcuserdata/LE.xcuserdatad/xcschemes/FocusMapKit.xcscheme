@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0510"
+   LastUpgradeVersion = "0630"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2FE818DD06B88F55A5743472"
-               BuildableName = "libPods-NSData+Base64.a"
-               BlueprintName = "Pods-NSData+Base64"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "8B2F25E81AD3205300187FD8"
+               BuildableName = "FocusMapKit.framework"
+               BlueprintName = "FocusMapKit"
+               ReferencedContainer = "container:FocusMap.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -39,6 +39,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "8B2F25E81AD3205300187FD8"
+            BuildableName = "FocusMapKit.framework"
+            BlueprintName = "FocusMapKit"
+            ReferencedContainer = "container:FocusMap.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -48,6 +57,15 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "8B2F25E81AD3205300187FD8"
+            BuildableName = "FocusMapKit.framework"
+            BlueprintName = "FocusMapKit"
+            ReferencedContainer = "container:FocusMap.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

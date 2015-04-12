@@ -1,6 +1,6 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CDJSONExporter" "${PODS_ROOT}/Headers/Public/MagicalRecord" "${PODS_ROOT}/Headers/Public/MagicalRecord/MagicalRecord" "${PODS_ROOT}/Headers/Public/NSData+Base64"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CDJSONExporter" "${PODS_ROOT}/Headers/Public/MagicalRecord" "${PODS_ROOT}/Headers/Public/MagicalRecord/MagicalRecord" "${PODS_ROOT}/Headers/Public/NSData+Base64"
 OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/CDJSONExporter" -isystem "${PODS_ROOT}/Headers/Public/MagicalRecord" -isystem "${PODS_ROOT}/Headers/Public/MagicalRecord/MagicalRecord" -isystem "${PODS_ROOT}/Headers/Public/NSData+Base64"
-OTHER_LDFLAGS = -ObjC -l"Pods-CDJSONExporter" -l"Pods-MagicalRecord" -l"Pods-NSData+Base64" -framework "CoreData" -framework "CoreFoundation"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"Pods-CDJSONExporter" -l"Pods-MagicalRecord" -l"Pods-NSData+Base64" -framework "CoreData" -framework "CoreFoundation"
 OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
 PODS_ROOT = ${SRCROOT}/Pods

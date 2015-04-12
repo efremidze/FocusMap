@@ -6,7 +6,8 @@ PODS:
 
 DEPENDENCIES:
   - CDJSONExporter (~> 1.0)
-  - MagicalRecord/Shorthand (from `https://github.com/magicalpanda/MagicalRecord.git`, branch `develop`)
+  - MagicalRecord/Shorthand (from `https://github.com/magicalpanda/MagicalRecord.git`,
+    branch `develop`)
 
 EXTERNAL SOURCES:
   MagicalRecord:
@@ -20,7 +21,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   CDJSONExporter: e6474fc95698ce2178dbeaa74ec1873b4a53cdec
-  MagicalRecord: 6017a9417d767e75eb8132b8cb2c399fc4c0c80f
+  MagicalRecord: 32760b04d86a961b38fb29413780443212a1f62d
   NSData+Base64: 4e84902c4db907a15673474677e57763ef3903e4
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.36.3

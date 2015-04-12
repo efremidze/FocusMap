@@ -7,6 +7,8 @@
 //
 
 #import "MVLocationManager.h"
+#import "MVHealthKit.h"
+#import "MVLocation+Extras.h"
 
 @interface MVLocationManager () <CLLocationManagerDelegate>
 
@@ -53,13 +55,18 @@
         // User has arrived, but not left, the location
     } else {
         // The visit is complete
-        NSManagedObjectContext *context = [NSManagedObjectContext defaultContext];
+        NSManagedObjectContext *context = [NSManagedObjectContext rootSavingContext];
         MVLocation *l = [MVLocation createLocationWithCoordinate:visit.coordinate inContext:context];
         
         MVVisit *v = [MVVisit createVisitWithArrivalDate:visit.arrivalDate departureDate:visit.departureDate inContext:context];
         [l addVisitsObject:v];
         
         [context saveToPersistentStoreAndWait];
+        
+        [l averageHeartRateWithCompletion:^(NSNumber *averageHeartRate) {
+            l.averageHeartRate = averageHeartRate;
+            [context saveToPersistentStoreAndWait];
+        }];
     }
     
     UILocalNotification *notification = [UILocalNotification new];

@@ -48,15 +48,15 @@
 
 #pragma mark -
 
-- (void)fetchAverageHeartRateWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate completionHandler:(void (^)(double, NSError *))completionHandler
+- (void)fetchAverageHeartRateWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate completion:(void (^)(double, NSError *))completion
 {
     HKQuantityType *quantityType = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate];
     NSPredicate *predicate = [HKQuery predicateForSamplesWithStartDate:startDate endDate:endDate options:HKQueryOptionStrictStartDate];
     HKStatisticsQuery *query = [[HKStatisticsQuery alloc] initWithQuantityType:quantityType quantitySamplePredicate:predicate options:HKStatisticsOptionDiscreteAverage completionHandler:^(HKStatisticsQuery *query, HKStatistics *result, NSError *error) {
         HKUnit *heartBeatsPerMinuteUnit = [[HKUnit countUnit] unitDividedByUnit:[HKUnit minuteUnit]];
         double heartRateAverage = [result.averageQuantity doubleValueForUnit:heartBeatsPerMinuteUnit];
-        if (completionHandler)
-            completionHandler(heartRateAverage, error);
+        if (completion)
+            completion(heartRateAverage, error);
     }];
     [self.healthStore executeQuery:query];
 }

@@ -14,7 +14,7 @@ static double const kDegrees = 0.001;
 {
     MVLocation *location = [MVLocation locationWithCoordinate:coordinate inContext:context];
     if (!location) {
-        location = [MVLocation createEntityInContext:context];
+        location = [MVLocation MR_createEntityInContext:context];
         location.latitudeValue = coordinate.latitude;
         location.longitudeValue = coordinate.longitude;
     }
@@ -34,7 +34,7 @@ static double const kDegrees = 0.001;
                                        NSStringFromSelector(@selector(longitude)),
                                        @(coordinate.longitude + kDegrees)];
     NSCompoundPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[latitudePredicate, longitudePredicate]];
-    NSFetchRequest *request = [MVLocation requestFirstWithPredicate:predicate inContext:context];
+    NSFetchRequest *request = [MVLocation MR_requestFirstWithPredicate:predicate inContext:context];
     [request setRelationshipKeyPathsForPrefetching:@[NSStringFromSelector(@selector(visits))]];
     return [MVLocation MR_executeFetchRequestAndReturnFirstObject:request inContext:context];
 }

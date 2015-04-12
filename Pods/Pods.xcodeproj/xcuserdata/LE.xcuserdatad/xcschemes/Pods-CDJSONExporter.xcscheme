@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "691E2FC75F524AFF1291F944"
+               BlueprintIdentifier = "AA718B67AF289E5C576926BB"
                BuildableName = "libPods-CDJSONExporter.a"
                BlueprintName = "Pods-CDJSONExporter"
                ReferencedContainer = "container:Pods.xcodeproj">

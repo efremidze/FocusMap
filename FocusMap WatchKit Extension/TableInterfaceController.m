@@ -23,6 +23,9 @@
 - (instancetype)init
 {
     if (self = [super init]) {
+        self.locations = @[];
+        
+        [self loadTable];
     }
     return self;
 }
@@ -46,16 +49,20 @@
     [super didDeactivate];
 }
 
-- (void)loadTableRows
+- (void)loadTable
 {
-    [self.table setNumberOfRows:self.locations.count withRowType:@"default"];
-    
-    // Create all of the table rows.
-    [self.locations enumerateObjectsUsingBlock:^(MVLocation *location, NSUInteger idx, BOOL *stop) {
-        TableRowInterfaceController *row = [self.table rowControllerAtIndex:idx];
-        row.textLabel.text = [NSString stringWithFormat:@"%f %f", location.latitudeValue, location.longitudeValue];
-        row.detailTextLabel.text = [NSString stringWithFormat:@"%f", location.averageHeartRateValue];
-    }];
+    if (self.locations.count) {
+        [self.table setNumberOfRows:self.locations.count withRowType:@"row"];
+        
+        // Create all of the table rows.
+        [self.locations enumerateObjectsUsingBlock:^(MVLocation *location, NSUInteger idx, BOOL *stop) {
+            TableRowInterfaceController *row = [self.table rowControllerAtIndex:idx];
+            row.textLabel.text = [NSString stringWithFormat:@"%f %f", location.latitudeValue, location.longitudeValue];
+            row.detailTextLabel.text = [NSString stringWithFormat:@"%f", location.averageHeartRateValue];
+        }];
+    } else {
+        [self.table setNumberOfRows:1 withRowType:@"empty"];
+    }
 }
 
 @end

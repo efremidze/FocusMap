@@ -22,18 +22,26 @@
 
 /* Begin PBXBuildFile section */
 		5572052D3D9EF29D3C40B217 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B30C4EFF1A4BA403E16D04 /* libPods.a */; };
-		8B17A98A1ACBEF0D00243D70 /* _MVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B17A9891ACBEF0D00243D70 /* _MVLocation.m */; };
-		8B17A98D1ACBEF1400243D70 /* MVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B17A98C1ACBEF1400243D70 /* MVLocation.m */; };
-		8B17A9901ACC773B00243D70 /* MVCoreDataUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B17A98F1ACC773B00243D70 /* MVCoreDataUtilities.m */; };
+		8B11087D1AD9E8CE00DF880E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B11087C1AD9E8CE00DF880E /* MapKit.framework */; };
 		8B26459F1AD21A6100B16D3B /* TableRowInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B26459E1AD21A6100B16D3B /* TableRowInterfaceController.m */; };
+		8B2F25EE1AD3205300187FD8 /* FocusMapKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B2F25ED1AD3205300187FD8 /* FocusMapKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8B2F25F41AD3205300187FD8 /* FocusMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B2F25E91AD3205300187FD8 /* FocusMapKit.framework */; };
+		8B2F25FD1AD3205300187FD8 /* FocusMapKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F25FC1AD3205300187FD8 /* FocusMapKitTests.m */; };
+		8B2F26001AD3205300187FD8 /* FocusMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B2F25E91AD3205300187FD8 /* FocusMapKit.framework */; };
+		8B2F26011AD3205300187FD8 /* FocusMapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8B2F25E91AD3205300187FD8 /* FocusMapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8B2F261D1AD32C2800187FD8 /* NSManagedObject+Extras.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B2F260C1AD32C2800187FD8 /* NSManagedObject+Extras.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8B2F261E1AD32C2800187FD8 /* NSManagedObject+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F260D1AD32C2800187FD8 /* NSManagedObject+Extras.m */; };
+		8B2F26211AD32C2800187FD8 /* _MVLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B2F26111AD32C2800187FD8 /* _MVLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8B2F26221AD32C2800187FD8 /* _MVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F26121AD32C2800187FD8 /* _MVLocation.m */; };
+		8B2F26231AD32C2800187FD8 /* _MVVisit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B2F26131AD32C2800187FD8 /* _MVVisit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8B2F26241AD32C2800187FD8 /* _MVVisit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F26141AD32C2800187FD8 /* _MVVisit.m */; };
+		8B2F26261AD32C2800187FD8 /* MVLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B2F26171AD32C2800187FD8 /* MVLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8B2F26271AD32C2800187FD8 /* MVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F26181AD32C2800187FD8 /* MVLocation.m */; };
+		8B2F26281AD32C2800187FD8 /* MVVisit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B2F26191AD32C2800187FD8 /* MVVisit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8B2F26291AD32C2800187FD8 /* MVVisit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F261A1AD32C2800187FD8 /* MVVisit.m */; };
 		8B3BC7C21ACA04DD00A176CC /* TableInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3BC7C11ACA04DD00A176CC /* TableInterfaceController.m */; };
 		8B3BC7C41ACA354200A176CC /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3BC7C31ACA354200A176CC /* HealthKit.framework */; };
-		8B3BC7C61ACA371500A176CC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3BC7C51ACA371500A176CC /* CoreData.framework */; };
-		8B7A738C1ACB5C35002523C3 /* _MVVisit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7A73871ACB5C35002523C3 /* _MVVisit.m */; };
-		8B7A738D1ACB5C35002523C3 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B7A73881ACB5C35002523C3 /* Model.xcdatamodeld */; };
-		8B7A738E1ACB5C35002523C3 /* MVVisit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7A738B1ACB5C35002523C3 /* MVVisit.m */; };
-		8B7A73941ACB6301002523C3 /* NSManagedObjectContext+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7A73931ACB6301002523C3 /* NSManagedObjectContext+Extras.m */; };
-		8B7A73971ACB6541002523C3 /* NSManagedObject+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7A73961ACB6541002523C3 /* NSManagedObject+Extras.m */; };
+		8BC058E71AD36FED00C39573 /* MVLocation+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC058E61AD36FED00C39573 /* MVLocation+Extras.m */; };
 		8BC7BA011AC938AC000EC1C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC7BA001AC938AC000EC1C4 /* main.m */; };
 		8BC7BA041AC938AC000EC1C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC7BA031AC938AC000EC1C4 /* AppDelegate.m */; };
 		8BC7BA071AC938AC000EC1C4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC7BA061AC938AC000EC1C4 /* ViewController.m */; };
@@ -50,12 +58,41 @@
 		8BC7BA451AC93901000EC1C4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BC7BA441AC93901000EC1C4 /* Images.xcassets */; };
 		8BC7BA481AC93901000EC1C4 /* FocusMap WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8BC7BA281AC93901000EC1C4 /* FocusMap WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8BC7BA521AC941EF000EC1C4 /* MapInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC7BA511AC941EF000EC1C4 /* MapInterfaceController.m */; };
-		8BC7BA5C1AC9462C000EC1C4 /* MVHealthKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC7BA5B1AC9462C000EC1C4 /* MVHealthKit.m */; };
-		8BC7BA5F1AC9466C000EC1C4 /* MVLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC7BA5E1AC9466C000EC1C4 /* MVLocationManager.m */; };
+		8BEBD7A81AD9EC2D00EC3F82 /* EmptyTableRowInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEBD7A71AD9EC2D00EC3F82 /* EmptyTableRowInterfaceController.m */; };
+		8BEEB64C1AD330DC007B2954 /* FocusMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B2F25E91AD3205300187FD8 /* FocusMapKit.framework */; };
+		8BEEB6541AD338C0007B2954 /* MVHealthKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEEB6511AD338C0007B2954 /* MVHealthKit.m */; };
+		8BEEB6551AD338C0007B2954 /* MVLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEEB6531AD338C0007B2954 /* MVLocationManager.m */; };
+		8BEEB6581AD33C32007B2954 /* MVDataManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BEEB6561AD33C32007B2954 /* MVDataManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8BEEB6591AD33C32007B2954 /* MVDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEEB6571AD33C32007B2954 /* MVDataManager.m */; };
+		8BEEB65B1AD34044007B2954 /* FocusMapKit-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 8BEEB65A1AD34044007B2954 /* FocusMapKit-Prefix.pch */; };
+		8BEEB65E1AD34BC4007B2954 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8BEEB65C1AD34BC4007B2954 /* Model.xcdatamodeld */; };
+		8BEEB65F1AD34D2F007B2954 /* Model.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 8BEEB65C1AD34BC4007B2954 /* Model.xcdatamodeld */; };
+		A728F027B82F1A4DC3A9A86B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B30C4EFF1A4BA403E16D04 /* libPods.a */; };
 		F7AC4B5C9314236A0788C34A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B30C4EFF1A4BA403E16D04 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8B2F25F51AD3205300187FD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BC7B9F31AC938AC000EC1C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B2F25E81AD3205300187FD8;
+			remoteInfo = FocusMapKit;
+		};
+		8B2F25F71AD3205300187FD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BC7B9F31AC938AC000EC1C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8BC7B9FA1AC938AC000EC1C4;
+			remoteInfo = FocusMap;
+		};
+		8B2F25FE1AD3205300187FD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BC7B9F31AC938AC000EC1C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B2F25E81AD3205300187FD8;
+			remoteInfo = FocusMapKit;
+		};
 		8BC7BA151AC938AC000EC1C4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8BC7B9F31AC938AC000EC1C4 /* Project object */;
@@ -80,6 +117,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		8B2F26071AD3205400187FD8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8B2F26011AD3205300187FD8 /* FocusMapKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8BC7BA4F1AC93901000EC1C4 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -95,29 +143,34 @@
 
 /* Begin PBXFileReference section */
 		00B30C4EFF1A4BA403E16D04 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B17A9881ACBEF0D00243D70 /* _MVLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _MVLocation.h; sourceTree = "<group>"; };
-		8B17A9891ACBEF0D00243D70 /* _MVLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _MVLocation.m; sourceTree = "<group>"; };
-		8B17A98B1ACBEF1400243D70 /* MVLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVLocation.h; sourceTree = "<group>"; };
-		8B17A98C1ACBEF1400243D70 /* MVLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVLocation.m; sourceTree = "<group>"; };
-		8B17A98E1ACC773B00243D70 /* MVCoreDataUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVCoreDataUtilities.h; sourceTree = "<group>"; };
-		8B17A98F1ACC773B00243D70 /* MVCoreDataUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVCoreDataUtilities.m; sourceTree = "<group>"; };
+		22CCD49310751B0D7BC1E2AD /* libPods-FocusMapKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FocusMapKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B11087C1AD9E8CE00DF880E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8B26459D1AD21A6100B16D3B /* TableRowInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableRowInterfaceController.h; sourceTree = "<group>"; };
 		8B26459E1AD21A6100B16D3B /* TableRowInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableRowInterfaceController.m; sourceTree = "<group>"; };
+		8B2F25E91AD3205300187FD8 /* FocusMapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FocusMapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B2F25EC1AD3205300187FD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B2F25ED1AD3205300187FD8 /* FocusMapKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FocusMapKit.h; sourceTree = "<group>"; };
+		8B2F25F31AD3205300187FD8 /* FocusMapKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FocusMapKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B2F25FB1AD3205300187FD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B2F25FC1AD3205300187FD8 /* FocusMapKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FocusMapKitTests.m; sourceTree = "<group>"; };
+		8B2F260C1AD32C2800187FD8 /* NSManagedObject+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Extras.h"; sourceTree = "<group>"; };
+		8B2F260D1AD32C2800187FD8 /* NSManagedObject+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Extras.m"; sourceTree = "<group>"; };
+		8B2F26111AD32C2800187FD8 /* _MVLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _MVLocation.h; sourceTree = "<group>"; };
+		8B2F26121AD32C2800187FD8 /* _MVLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _MVLocation.m; sourceTree = "<group>"; };
+		8B2F26131AD32C2800187FD8 /* _MVVisit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _MVVisit.h; sourceTree = "<group>"; };
+		8B2F26141AD32C2800187FD8 /* _MVVisit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _MVVisit.m; sourceTree = "<group>"; };
+		8B2F26171AD32C2800187FD8 /* MVLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVLocation.h; sourceTree = "<group>"; };
+		8B2F26181AD32C2800187FD8 /* MVLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVLocation.m; sourceTree = "<group>"; };
+		8B2F26191AD32C2800187FD8 /* MVVisit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVisit.h; sourceTree = "<group>"; };
+		8B2F261A1AD32C2800187FD8 /* MVVisit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVisit.m; sourceTree = "<group>"; };
 		8B3BC7C01ACA04DD00A176CC /* TableInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableInterfaceController.h; sourceTree = "<group>"; };
 		8B3BC7C11ACA04DD00A176CC /* TableInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableInterfaceController.m; sourceTree = "<group>"; };
 		8B3BC7C31ACA354200A176CC /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		8B3BC7C51ACA371500A176CC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8B3BC7C71ACA37A000A176CC /* FocusMap-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FocusMap-Prefix.pch"; sourceTree = "<group>"; };
 		8B4508E31ACE1CEE00D18587 /* FocusMap WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "FocusMap WatchKit Extension.entitlements"; sourceTree = "<group>"; };
-		8B7A73861ACB5C35002523C3 /* _MVVisit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _MVVisit.h; sourceTree = "<group>"; };
-		8B7A73871ACB5C35002523C3 /* _MVVisit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _MVVisit.m; sourceTree = "<group>"; };
-		8B7A73891ACB5C35002523C3 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		8B7A738A1ACB5C35002523C3 /* MVVisit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVisit.h; sourceTree = "<group>"; };
-		8B7A738B1ACB5C35002523C3 /* MVVisit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVisit.m; sourceTree = "<group>"; };
-		8B7A73921ACB6301002523C3 /* NSManagedObjectContext+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Extras.h"; sourceTree = "<group>"; };
-		8B7A73931ACB6301002523C3 /* NSManagedObjectContext+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+Extras.m"; sourceTree = "<group>"; };
-		8B7A73951ACB6541002523C3 /* NSManagedObject+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Extras.h"; sourceTree = "<group>"; };
-		8B7A73961ACB6541002523C3 /* NSManagedObject+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Extras.m"; sourceTree = "<group>"; };
+		8BC058E51AD36FED00C39573 /* MVLocation+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MVLocation+Extras.h"; sourceTree = "<group>"; };
+		8BC058E61AD36FED00C39573 /* MVLocation+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MVLocation+Extras.m"; sourceTree = "<group>"; };
 		8BC7B9FB1AC938AC000EC1C4 /* FocusMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FocusMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BC7B9FF1AC938AC000EC1C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BC7BA001AC938AC000EC1C4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -147,23 +200,46 @@
 		8BC7BA441AC93901000EC1C4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8BC7BA501AC941EE000EC1C4 /* MapInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapInterfaceController.h; sourceTree = "<group>"; };
 		8BC7BA511AC941EF000EC1C4 /* MapInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapInterfaceController.m; sourceTree = "<group>"; };
-		8BC7BA5A1AC9462C000EC1C4 /* MVHealthKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVHealthKit.h; sourceTree = "<group>"; };
-		8BC7BA5B1AC9462C000EC1C4 /* MVHealthKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVHealthKit.m; sourceTree = "<group>"; };
-		8BC7BA5D1AC9466C000EC1C4 /* MVLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVLocationManager.h; sourceTree = "<group>"; };
-		8BC7BA5E1AC9466C000EC1C4 /* MVLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVLocationManager.m; sourceTree = "<group>"; };
 		8BC7BA651AC9476C000EC1C4 /* FocusMap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FocusMap.entitlements; sourceTree = "<group>"; };
+		8BEBD7A61AD9EC2D00EC3F82 /* EmptyTableRowInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyTableRowInterfaceController.h; sourceTree = "<group>"; };
+		8BEBD7A71AD9EC2D00EC3F82 /* EmptyTableRowInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyTableRowInterfaceController.m; sourceTree = "<group>"; };
+		8BEEB6501AD338C0007B2954 /* MVHealthKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVHealthKit.h; sourceTree = "<group>"; };
+		8BEEB6511AD338C0007B2954 /* MVHealthKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVHealthKit.m; sourceTree = "<group>"; };
+		8BEEB6521AD338C0007B2954 /* MVLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVLocationManager.h; sourceTree = "<group>"; };
+		8BEEB6531AD338C0007B2954 /* MVLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVLocationManager.m; sourceTree = "<group>"; };
+		8BEEB6561AD33C32007B2954 /* MVDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVDataManager.h; sourceTree = "<group>"; };
+		8BEEB6571AD33C32007B2954 /* MVDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVDataManager.m; sourceTree = "<group>"; };
+		8BEEB65A1AD34044007B2954 /* FocusMapKit-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FocusMapKit-Prefix.pch"; sourceTree = "<group>"; };
+		8BEEB65D1AD34BC4007B2954 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		9A781F2032449F6783EB278F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B43C2DB020F5623854097089 /* libPods-FocusMap.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FocusMap.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF1CAD5E23921C40B2D0CD7F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8B2F25E51AD3205300187FD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A728F027B82F1A4DC3A9A86B /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B2F25F01AD3205300187FD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B2F25F41AD3205300187FD8 /* FocusMapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8BC7B9F81AC938AC000EC1C4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B3BC7C61ACA371500A176CC /* CoreData.framework in Frameworks */,
 				8B3BC7C41ACA354200A176CC /* HealthKit.framework in Frameworks */,
 				F7AC4B5C9314236A0788C34A /* libPods.a in Frameworks */,
+				8B2F26001AD3205300187FD8 /* FocusMapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +254,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BEEB64C1AD330DC007B2954 /* FocusMapKit.framework in Frameworks */,
+				8B11087D1AD9E8CE00DF880E /* MapKit.framework in Frameworks */,
 				5572052D3D9EF29D3C40B217 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -192,20 +270,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8B7A737C1ACB540D002523C3 /* Model */ = {
+		8B2F25EA1AD3205300187FD8 /* FocusMapKit */ = {
 			isa = PBXGroup;
 			children = (
-				8B17A9881ACBEF0D00243D70 /* _MVLocation.h */,
-				8B17A9891ACBEF0D00243D70 /* _MVLocation.m */,
-				8B7A73861ACB5C35002523C3 /* _MVVisit.h */,
-				8B7A73871ACB5C35002523C3 /* _MVVisit.m */,
-				8B7A73881ACB5C35002523C3 /* Model.xcdatamodeld */,
-				8B17A98B1ACBEF1400243D70 /* MVLocation.h */,
-				8B17A98C1ACBEF1400243D70 /* MVLocation.m */,
-				8B7A738A1ACB5C35002523C3 /* MVVisit.h */,
-				8B7A738B1ACB5C35002523C3 /* MVVisit.m */,
+				8B2F25ED1AD3205300187FD8 /* FocusMapKit.h */,
+				8B2F26091AD32C2800187FD8 /* Library */,
+				8B2F26101AD32C2800187FD8 /* Models */,
+				8B2F25EB1AD3205300187FD8 /* Supporting Files */,
 			);
-			path = Model;
+			path = FocusMapKit;
+			sourceTree = "<group>";
+		};
+		8B2F25EB1AD3205300187FD8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8BEEB65A1AD34044007B2954 /* FocusMapKit-Prefix.pch */,
+				8B2F25EC1AD3205300187FD8 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8B2F25F91AD3205300187FD8 /* FocusMapKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				8B2F25FC1AD3205300187FD8 /* FocusMapKitTests.m */,
+				8B2F25FA1AD3205300187FD8 /* Supporting Files */,
+			);
+			path = FocusMapKitTests;
+			sourceTree = "<group>";
+		};
+		8B2F25FA1AD3205300187FD8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8B2F25FB1AD3205300187FD8 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8B2F26091AD32C2800187FD8 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				8BEEB6561AD33C32007B2954 /* MVDataManager.h */,
+				8BEEB6571AD33C32007B2954 /* MVDataManager.m */,
+				8B2F260C1AD32C2800187FD8 /* NSManagedObject+Extras.h */,
+				8B2F260D1AD32C2800187FD8 /* NSManagedObject+Extras.m */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		8B2F26101AD32C2800187FD8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8B2F26111AD32C2800187FD8 /* _MVLocation.h */,
+				8B2F26121AD32C2800187FD8 /* _MVLocation.m */,
+				8B2F26131AD32C2800187FD8 /* _MVVisit.h */,
+				8B2F26141AD32C2800187FD8 /* _MVVisit.m */,
+				8B2F26171AD32C2800187FD8 /* MVLocation.h */,
+				8B2F26181AD32C2800187FD8 /* MVLocation.m */,
+				8B2F26191AD32C2800187FD8 /* MVVisit.h */,
+				8B2F261A1AD32C2800187FD8 /* MVVisit.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		8BC7B9F21AC938AC000EC1C4 = {
@@ -214,6 +339,8 @@
 				8BC7B9FD1AC938AC000EC1C4 /* FocusMap */,
 				8BC7BA3E1AC93901000EC1C4 /* FocusMap WatchKit App */,
 				8BC7BA291AC93901000EC1C4 /* FocusMap WatchKit Extension */,
+				8B2F25EA1AD3205300187FD8 /* FocusMapKit */,
+				8B2F25F91AD3205300187FD8 /* FocusMapKitTests */,
 				8BC7BA171AC938AC000EC1C4 /* FocusMapTests */,
 				E348BADA165BB8DBC5E131C1 /* Frameworks */,
 				CE82198A3D4485FFE95787A2 /* Pods */,
@@ -228,6 +355,8 @@
 				8BC7BA141AC938AC000EC1C4 /* FocusMapTests.xctest */,
 				8BC7BA281AC93901000EC1C4 /* FocusMap WatchKit Extension.appex */,
 				8BC7BA3A1AC93901000EC1C4 /* FocusMap WatchKit App.app */,
+				8B2F25E91AD3205300187FD8 /* FocusMapKit.framework */,
+				8B2F25F31AD3205300187FD8 /* FocusMapKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -235,17 +364,17 @@
 		8BC7B9FD1AC938AC000EC1C4 /* FocusMap */ = {
 			isa = PBXGroup;
 			children = (
-				8BC7BA651AC9476C000EC1C4 /* FocusMap.entitlements */,
 				8BC7BA021AC938AC000EC1C4 /* AppDelegate.h */,
 				8BC7BA031AC938AC000EC1C4 /* AppDelegate.m */,
-				8BC7BA051AC938AC000EC1C4 /* ViewController.h */,
-				8BC7BA061AC938AC000EC1C4 /* ViewController.m */,
-				8B7A737C1ACB540D002523C3 /* Model */,
-				8BC7BA591AC945E7000EC1C4 /* Library */,
-				8BC7BA081AC938AC000EC1C4 /* Main.storyboard */,
+				8BC7BA651AC9476C000EC1C4 /* FocusMap.entitlements */,
 				8BC7BA0B1AC938AC000EC1C4 /* Images.xcassets */,
 				8BC7BA0D1AC938AC000EC1C4 /* LaunchScreen.xib */,
+				8BEEB64F1AD338C0007B2954 /* Libraries */,
+				8BC7BA081AC938AC000EC1C4 /* Main.storyboard */,
+				8BEEB65C1AD34BC4007B2954 /* Model.xcdatamodeld */,
 				8BC7B9FE1AC938AC000EC1C4 /* Supporting Files */,
+				8BC7BA051AC938AC000EC1C4 /* ViewController.h */,
+				8BC7BA061AC938AC000EC1C4 /* ViewController.m */,
 			);
 			path = FocusMap;
 			sourceTree = "<group>";
@@ -280,6 +409,8 @@
 		8BC7BA291AC93901000EC1C4 /* FocusMap WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				8BEBD7A61AD9EC2D00EC3F82 /* EmptyTableRowInterfaceController.h */,
+				8BEBD7A71AD9EC2D00EC3F82 /* EmptyTableRowInterfaceController.m */,
 				8B4508E31ACE1CEE00D18587 /* FocusMap WatchKit Extension.entitlements */,
 				8BC7BA331AC93901000EC1C4 /* GlanceController.h */,
 				8BC7BA341AC93901000EC1C4 /* GlanceController.m */,
@@ -326,21 +457,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		8BC7BA591AC945E7000EC1C4 /* Library */ = {
+		8BEEB64F1AD338C0007B2954 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				8B17A98E1ACC773B00243D70 /* MVCoreDataUtilities.h */,
-				8B17A98F1ACC773B00243D70 /* MVCoreDataUtilities.m */,
-				8BC7BA5A1AC9462C000EC1C4 /* MVHealthKit.h */,
-				8BC7BA5B1AC9462C000EC1C4 /* MVHealthKit.m */,
-				8BC7BA5D1AC9466C000EC1C4 /* MVLocationManager.h */,
-				8BC7BA5E1AC9466C000EC1C4 /* MVLocationManager.m */,
-				8B7A73951ACB6541002523C3 /* NSManagedObject+Extras.h */,
-				8B7A73961ACB6541002523C3 /* NSManagedObject+Extras.m */,
-				8B7A73921ACB6301002523C3 /* NSManagedObjectContext+Extras.h */,
-				8B7A73931ACB6301002523C3 /* NSManagedObjectContext+Extras.m */,
+				8BEEB6501AD338C0007B2954 /* MVHealthKit.h */,
+				8BEEB6511AD338C0007B2954 /* MVHealthKit.m */,
+				8BC058E51AD36FED00C39573 /* MVLocation+Extras.h */,
+				8BC058E61AD36FED00C39573 /* MVLocation+Extras.m */,
+				8BEEB6521AD338C0007B2954 /* MVLocationManager.h */,
+				8BEEB6531AD338C0007B2954 /* MVLocationManager.m */,
 			);
-			path = Library;
+			path = Libraries;
 			sourceTree = "<group>";
 		};
 		CE82198A3D4485FFE95787A2 /* Pods */ = {
@@ -355,16 +482,76 @@
 		E348BADA165BB8DBC5E131C1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8B11087C1AD9E8CE00DF880E /* MapKit.framework */,
 				8B3BC7C51ACA371500A176CC /* CoreData.framework */,
 				8B3BC7C31ACA354200A176CC /* HealthKit.framework */,
 				00B30C4EFF1A4BA403E16D04 /* libPods.a */,
+				B43C2DB020F5623854097089 /* libPods-FocusMap.a */,
+				22CCD49310751B0D7BC1E2AD /* libPods-FocusMapKit.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		8B2F25E61AD3205300187FD8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BEEB65B1AD34044007B2954 /* FocusMapKit-Prefix.pch in Headers */,
+				8B2F25EE1AD3205300187FD8 /* FocusMapKit.h in Headers */,
+				8B2F26231AD32C2800187FD8 /* _MVVisit.h in Headers */,
+				8B2F26211AD32C2800187FD8 /* _MVLocation.h in Headers */,
+				8B2F261D1AD32C2800187FD8 /* NSManagedObject+Extras.h in Headers */,
+				8B2F26261AD32C2800187FD8 /* MVLocation.h in Headers */,
+				8B2F26281AD32C2800187FD8 /* MVVisit.h in Headers */,
+				8BEEB6581AD33C32007B2954 /* MVDataManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		8B2F25E81AD3205300187FD8 /* FocusMapKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B2F26061AD3205400187FD8 /* Build configuration list for PBXNativeTarget "FocusMapKit" */;
+			buildPhases = (
+				1E036F645908E44EABE6949F /* Check Pods Manifest.lock */,
+				8B2F25E41AD3205300187FD8 /* Sources */,
+				8B2F25E51AD3205300187FD8 /* Frameworks */,
+				8B2F25E61AD3205300187FD8 /* Headers */,
+				8B2F25E71AD3205300187FD8 /* Resources */,
+				2081B7702EB78A066EC48EC9 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FocusMapKit;
+			productName = FocusMapKit;
+			productReference = 8B2F25E91AD3205300187FD8 /* FocusMapKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8B2F25F21AD3205300187FD8 /* FocusMapKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B2F26081AD3205400187FD8 /* Build configuration list for PBXNativeTarget "FocusMapKitTests" */;
+			buildPhases = (
+				8B2F25EF1AD3205300187FD8 /* Sources */,
+				8B2F25F01AD3205300187FD8 /* Frameworks */,
+				8B2F25F11AD3205300187FD8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B2F25F61AD3205300187FD8 /* PBXTargetDependency */,
+				8B2F25F81AD3205300187FD8 /* PBXTargetDependency */,
+			);
+			name = FocusMapKitTests;
+			productName = FocusMapKitTests;
+			productReference = 8B2F25F31AD3205300187FD8 /* FocusMapKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		8BC7B9FA1AC938AC000EC1C4 /* FocusMap */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8BC7BA1E1AC938AC000EC1C4 /* Build configuration list for PBXNativeTarget "FocusMap" */;
@@ -375,11 +562,13 @@
 				8BC7B9F91AC938AC000EC1C4 /* Resources */,
 				8BC7BA4F1AC93901000EC1C4 /* Embed App Extensions */,
 				D338A94EE249628F2321D253 /* Copy Pods Resources */,
+				8B2F26071AD3205400187FD8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				8BC7BA471AC93901000EC1C4 /* PBXTargetDependency */,
+				8B2F25FF1AD3205300187FD8 /* PBXTargetDependency */,
 			);
 			name = FocusMap;
 			productName = FocusMap;
@@ -449,6 +638,14 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "More Voltage";
 				TargetAttributes = {
+					8B2F25E81AD3205300187FD8 = {
+						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = NNRNHY2N8B;
+					};
+					8B2F25F21AD3205300187FD8 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = 8BC7B9FA1AC938AC000EC1C4;
+					};
 					8B7A73811ACB58EF002523C3 = {
 						CreatedOnToolsVersion = 6.3;
 					};
@@ -481,6 +678,9 @@
 							com.apple.HealthKit = {
 								enabled = 0;
 							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
 						};
 					};
 					8BC7BA391AC93901000EC1C4 = {
@@ -507,11 +707,27 @@
 				8BC7BA271AC93901000EC1C4 /* FocusMap WatchKit Extension */,
 				8BC7BA391AC93901000EC1C4 /* FocusMap WatchKit App */,
 				8B7A73811ACB58EF002523C3 /* Mogenerator */,
+				8B2F25E81AD3205300187FD8 /* FocusMapKit */,
+				8B2F25F21AD3205300187FD8 /* FocusMapKitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8B2F25E71AD3205300187FD8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B2F25F11AD3205300187FD8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8BC7B9F91AC938AC000EC1C4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -533,6 +749,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BEEB65F1AD34D2F007B2954 /* Model.xcdatamodeld in Resources */,
 				8BC7BA3B1AC93901000EC1C4 /* FocusMap WatchKit App.app in Resources */,
 				8BC7BA371AC93901000EC1C4 /* Images.xcassets in Resources */,
 			);
@@ -550,6 +767,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1E036F645908E44EABE6949F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2081B7702EB78A066EC48EC9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		452557AC42A495EA2AD821BC /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -591,7 +838,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "PATH=${PATH}:/usr/local/bin\nmogenerator -m FocusMap/Model/Model.xcdatamodeld -O FocusMap/Model --template-var arc=true";
+			shellScript = "PATH=${PATH}:/usr/local/bin\nmogenerator -m FocusMapKit/Models/Model.xcdatamodeld -O FocusMapKit/Models --template-var arc=true";
 		};
 		AAD20544E1AA3598510CE147 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -626,23 +873,38 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8B2F25E41AD3205300187FD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BEEB6591AD33C32007B2954 /* MVDataManager.m in Sources */,
+				8B2F261E1AD32C2800187FD8 /* NSManagedObject+Extras.m in Sources */,
+				8B2F26271AD32C2800187FD8 /* MVLocation.m in Sources */,
+				8B2F26241AD32C2800187FD8 /* _MVVisit.m in Sources */,
+				8B2F26221AD32C2800187FD8 /* _MVLocation.m in Sources */,
+				8B2F26291AD32C2800187FD8 /* MVVisit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B2F25EF1AD3205300187FD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B2F25FD1AD3205300187FD8 /* FocusMapKitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8BC7B9F71AC938AC000EC1C4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B7A73941ACB6301002523C3 /* NSManagedObjectContext+Extras.m in Sources */,
-				8B7A738C1ACB5C35002523C3 /* _MVVisit.m in Sources */,
-				8B17A98A1ACBEF0D00243D70 /* _MVLocation.m in Sources */,
 				8BC7BA071AC938AC000EC1C4 /* ViewController.m in Sources */,
-				8BC7BA5C1AC9462C000EC1C4 /* MVHealthKit.m in Sources */,
-				8B7A73971ACB6541002523C3 /* NSManagedObject+Extras.m in Sources */,
-				8B7A738D1ACB5C35002523C3 /* Model.xcdatamodeld in Sources */,
-				8BC7BA5F1AC9466C000EC1C4 /* MVLocationManager.m in Sources */,
+				8BEEB6541AD338C0007B2954 /* MVHealthKit.m in Sources */,
+				8BEEB6551AD338C0007B2954 /* MVLocationManager.m in Sources */,
 				8BC7BA041AC938AC000EC1C4 /* AppDelegate.m in Sources */,
-				8B17A9901ACC773B00243D70 /* MVCoreDataUtilities.m in Sources */,
 				8BC7BA011AC938AC000EC1C4 /* main.m in Sources */,
-				8B7A738E1ACB5C35002523C3 /* MVVisit.m in Sources */,
-				8B17A98D1ACBEF1400243D70 /* MVLocation.m in Sources */,
+				8BEEB65E1AD34BC4007B2954 /* Model.xcdatamodeld in Sources */,
+				8BC058E71AD36FED00C39573 /* MVLocation+Extras.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +924,7 @@
 				8BC7BA2F1AC93901000EC1C4 /* InterfaceController.m in Sources */,
 				8B3BC7C21ACA04DD00A176CC /* TableInterfaceController.m in Sources */,
 				8BC7BA521AC941EF000EC1C4 /* MapInterfaceController.m in Sources */,
+				8BEBD7A81AD9EC2D00EC3F82 /* EmptyTableRowInterfaceController.m in Sources */,
 				8BC7BA351AC93901000EC1C4 /* GlanceController.m in Sources */,
 				8B26459F1AD21A6100B16D3B /* TableRowInterfaceController.m in Sources */,
 			);
@@ -670,6 +933,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8B2F25F61AD3205300187FD8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B2F25E81AD3205300187FD8 /* FocusMapKit */;
+			targetProxy = 8B2F25F51AD3205300187FD8 /* PBXContainerItemProxy */;
+		};
+		8B2F25F81AD3205300187FD8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8BC7B9FA1AC938AC000EC1C4 /* FocusMap */;
+			targetProxy = 8B2F25F71AD3205300187FD8 /* PBXContainerItemProxy */;
+		};
+		8B2F25FF1AD3205300187FD8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B2F25E81AD3205300187FD8 /* FocusMapKit */;
+			targetProxy = 8B2F25FE1AD3205300187FD8 /* PBXContainerItemProxy */;
+		};
 		8BC7BA161AC938AC000EC1C4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8BC7B9FA1AC938AC000EC1C4 /* FocusMap */;
@@ -715,6 +993,86 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8B2F26021AD3205400187FD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF1CAD5E23921C40B2D0CD7F /* Pods.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FocusMapKit/FocusMapKit-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FocusMapKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8B2F26031AD3205400187FD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A781F2032449F6783EB278F /* Pods.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FocusMapKit/FocusMapKit-Prefix.pch";
+				INFOPLIST_FILE = FocusMapKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8B2F26041AD3205400187FD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FocusMapKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FocusMap.app/FocusMap";
+			};
+			name = Debug;
+		};
+		8B2F26051AD3205400187FD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FocusMapKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FocusMap.app/FocusMap";
+			};
+			name = Release;
+		};
 		8B7A73831ACB58F0002523C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -936,6 +1294,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8B2F26061AD3205400187FD8 /* Build configuration list for PBXNativeTarget "FocusMapKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B2F26021AD3205400187FD8 /* Debug */,
+				8B2F26031AD3205400187FD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B2F26081AD3205400187FD8 /* Build configuration list for PBXNativeTarget "FocusMapKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B2F26041AD3205400187FD8 /* Debug */,
+				8B2F26051AD3205400187FD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8B7A73821ACB58F0002523C3 /* Build configuration list for PBXAggregateTarget "Mogenerator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -993,12 +1369,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		8B7A73881ACB5C35002523C3 /* Model.xcdatamodeld */ = {
+		8BEEB65C1AD34BC4007B2954 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				8B7A73891ACB5C35002523C3 /* Model.xcdatamodel */,
+				8BEEB65D1AD34BC4007B2954 /* Model.xcdatamodel */,
 			);
-			currentVersion = 8B7A73891ACB5C35002523C3 /* Model.xcdatamodel */;
+			currentVersion = 8BEEB65D1AD34BC4007B2954 /* Model.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

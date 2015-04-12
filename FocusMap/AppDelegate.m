@@ -8,12 +8,10 @@
 
 #import "AppDelegate.h"
 
-#import "MVLocationManager.h"
-#import "MVHealthKit.h"
-
-#import "MVCoreDataUtilities.h"
-
 #import "CDJSONExporter.h"
+
+#import "MVHealthKit.h"
+#import "MVLocationManager.h"
 
 @import MessageUI;
 
@@ -25,7 +23,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[MVCoreDataUtilities sharedInstance] locations];
+    [MVDataManager sharedInstance];
     
     UIUserNotificationSettings *userNotificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:userNotificationSettings];
@@ -82,13 +80,6 @@
 
 #pragma mark -
 
-- (void)application:(UIApplication *)application handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary *))reply
-{
-    
-}
-
-#pragma mark -
-
 - (void)initHealthKit
 {
     [[MVHealthKit sharedInstance] requestAuthorizationWithCompletion:^(BOOL success, NSError *error) {
@@ -134,12 +125,12 @@
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"core_data.json"];
     NSData *data = [NSData dataWithContentsOfFile:filePath];
-    [CDJSONExporter importData:data toContext:[NSManagedObjectContext defaultContext] clear:YES];
+    [CDJSONExporter importData:data toContext:[NSManagedObjectContext rootSavingContext] clear:YES];
 }
 
 - (void)exportData
 {
-    NSManagedObjectContext *context = [NSManagedObjectContext defaultContext];
+    NSManagedObjectContext *context = [NSManagedObjectContext rootSavingContext];
     NSData *data = [CDJSONExporter exportContext:context auxiliaryInfo:nil];
     MFMailComposeViewController *viewController = [[MFMailComposeViewController alloc] initWithNibName:nil bundle:nil];
     [viewController addAttachmentData:data mimeType:@"application/json" fileName:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"]];

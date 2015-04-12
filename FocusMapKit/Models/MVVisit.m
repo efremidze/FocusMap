@@ -10,7 +10,7 @@
 
 + (MVVisit *)createVisitWithArrivalDate:(NSDate *)arrivalDate departureDate:(NSDate *)departureDate inContext:(NSManagedObjectContext *)context;
 {
-    MVVisit *visit = [MVVisit createEntityInContext:context];
+    MVVisit *visit = [MVVisit MR_createEntityInContext:context];
     visit.arrivalDate = arrivalDate;
     visit.departureDate = departureDate;
     return visit;
