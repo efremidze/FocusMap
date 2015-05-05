@@ -39,4 +39,11 @@ static double const kDegrees = 0.001;
     return [MVLocation MR_executeFetchRequestAndReturnFirstObject:request inContext:context];
 }
 
+#pragma mark -
+
+- (CLLocationCoordinate2D)coordinate
+{
+    return CLLocationCoordinate2DMake(self.latitudeValue, self.longitudeValue);
+}
+
 @end

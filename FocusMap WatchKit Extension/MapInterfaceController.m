@@ -8,13 +8,27 @@
 
 #import "MapInterfaceController.h"
 
+@import FocusMapKit;
+
 @interface MapInterfaceController ()
 
-@property (nonatomic, weak) IBOutlet WKInterfaceMap *mapView;
+@property (nonatomic, weak) IBOutlet WKInterfaceMap *map;
+
+@property (nonatomic, strong) NSArray *locations;
 
 @end
 
 @implementation MapInterfaceController
+
+- (instancetype)init
+{
+    if (self = [super init]) {
+        self.locations = [MVDataManager sharedInstance].locations;
+        
+        [self load];
+    }
+    return self;
+}
 
 - (void)awakeWithContext:(id)context
 {
@@ -33,6 +47,20 @@
 {
     // This method is called when watch view controller is no longer visible
     [super didDeactivate];
+}
+
+#pragma mark -
+
+- (void)load
+{
+    MKMapRect mapRect = MKMapRectNull;
+    for (MVLocation *location in self.locations) {
+        MKMapPoint point = MKMapPointForCoordinate(location.coordinate);
+        MKMapRect rect = (MKMapRect){point.x, point.y, 0.1, 0.1};
+        mapRect = MKMapRectUnion(mapRect, rect);
+        [self.map addAnnotation:location.coordinate withPinColor:WKInterfaceMapPinColorRed];
+    }
+    [self.map setVisibleMapRect:mapRect];
 }
 
 @end

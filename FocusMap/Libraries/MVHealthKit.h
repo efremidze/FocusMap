@@ -20,4 +20,6 @@
 
 - (void)fetchAverageHeartRateWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate completion:(void (^)(double, NSError *))completion;
 
+- (void)storeHeartRate:(double)heartRate startDate:(NSDate *)startDate endDate:(NSDate *)endDate completion:(void (^)(BOOL, NSError *))completion;
+
 @end

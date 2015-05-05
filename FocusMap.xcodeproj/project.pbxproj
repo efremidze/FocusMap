@@ -22,7 +22,6 @@
 
 /* Begin PBXBuildFile section */
 		5572052D3D9EF29D3C40B217 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B30C4EFF1A4BA403E16D04 /* libPods.a */; };
-		8B11087D1AD9E8CE00DF880E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B11087C1AD9E8CE00DF880E /* MapKit.framework */; };
 		8B26459F1AD21A6100B16D3B /* TableRowInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B26459E1AD21A6100B16D3B /* TableRowInterfaceController.m */; };
 		8B2F25EE1AD3205300187FD8 /* FocusMapKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B2F25ED1AD3205300187FD8 /* FocusMapKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B2F25F41AD3205300187FD8 /* FocusMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B2F25E91AD3205300187FD8 /* FocusMapKit.framework */; };
@@ -144,7 +143,6 @@
 /* Begin PBXFileReference section */
 		00B30C4EFF1A4BA403E16D04 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		22CCD49310751B0D7BC1E2AD /* libPods-FocusMapKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FocusMapKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B11087C1AD9E8CE00DF880E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8B26459D1AD21A6100B16D3B /* TableRowInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableRowInterfaceController.h; sourceTree = "<group>"; };
 		8B26459E1AD21A6100B16D3B /* TableRowInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableRowInterfaceController.m; sourceTree = "<group>"; };
 		8B2F25E91AD3205300187FD8 /* FocusMapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FocusMapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -255,7 +253,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BEEB64C1AD330DC007B2954 /* FocusMapKit.framework in Frameworks */,
-				8B11087D1AD9E8CE00DF880E /* MapKit.framework in Frameworks */,
 				5572052D3D9EF29D3C40B217 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,7 +479,6 @@
 		E348BADA165BB8DBC5E131C1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8B11087C1AD9E8CE00DF880E /* MapKit.framework */,
 				8B3BC7C51ACA371500A176CC /* CoreData.framework */,
 				8B3BC7C31ACA354200A176CC /* HealthKit.framework */,
 				00B30C4EFF1A4BA403E16D04 /* libPods.a */,
@@ -661,6 +657,9 @@
 							};
 							com.apple.HealthKit = {
 								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 0;
 							};
 						};
 					};

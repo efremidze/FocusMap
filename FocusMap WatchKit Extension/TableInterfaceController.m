@@ -8,7 +8,8 @@
 
 #import "TableInterfaceController.h"
 #import "TableRowInterfaceController.h"
-#import "MVLocation.h"
+
+@import FocusMapKit;
 
 @interface TableInterfaceController ()
 
@@ -23,9 +24,9 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        self.locations = @[];
+        self.locations = [MVDataManager sharedInstance].locations;
         
-        [self loadTable];
+        [self load];
     }
     return self;
 }
@@ -49,7 +50,9 @@
     [super didDeactivate];
 }
 
-- (void)loadTable
+#pragma mark -
+
+- (void)load
 {
     if (self.locations.count) {
         [self.table setNumberOfRows:self.locations.count withRowType:@"row"];
