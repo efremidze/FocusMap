@@ -13,6 +13,8 @@
 #import "MVHealthKit.h"
 #import "MVLocationManager.h"
 
+#import "MVLocation+Extras.h"
+
 @import MessageUI;
 
 @interface AppDelegate ()
@@ -25,15 +27,28 @@
 {
     [MVDataManager sharedInstance];
     
-    UIUserNotificationSettings *userNotificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
-    [[UIApplication sharedApplication] registerUserNotificationSettings:userNotificationSettings];
-    
     [self.window makeKeyAndVisible];
     
     [self initHealthKit];
     [self initLocationManager];
     
-    [[MVLocation findAll] makeObjectsPerformSelector:@selector(logAsString)];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"ANY visits.duration > 1"];
+    NSArray *array = [[MVLocation findAllWithPredicate:[NSPredicate predicateWithFormat:@"%K > 0", NSStringFromSelector(@selector(averageHeartRate))]] filteredArrayUsingPredicate:predicate];
+    [array makeObjectsPerformSelector:@selector(logAsString)];
+    
+    for (MVLocation *location in array) {
+        for (MVVisit *visit in location.visits) {
+            NSLog(@"visit %@", visit);
+        }
+    }
+    
+    NSManagedObjectContext *context = [NSManagedObjectContext rootSavingContext];
+    for (MVLocation *location in array) {
+        [location averageHeartRateWithCompletion:^(NSNumber *averageHeartRate) {
+            location.averageHeartRate = averageHeartRate;
+            [context saveToPersistentStoreAndWait];
+        }];
+    }
     
     return YES;
 }
@@ -64,18 +79,6 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     [MagicalRecord cleanUp];
-}
-
-#pragma mark -
-
-- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
-{
-    NSLog(@"didRegisterUserNotificationSettings %@", notificationSettings);
-}
-
-- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
-{
-    NSLog(@"didReceiveLocalNotification %@", notification);
 }
 
 #pragma mark -

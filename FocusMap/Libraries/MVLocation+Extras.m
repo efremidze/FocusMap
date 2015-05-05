@@ -14,20 +14,30 @@
 - (void)averageHeartRateWithCompletion:(void (^)(NSNumber *averageHeartRate))completion;
 {
     dispatch_group_t resolve = dispatch_group_create();
-    
-    NSMutableArray *array = [NSMutableArray arrayWithCapacity:self.visits.count];
+
+    __block NSUInteger totalDuration = 0;
+    __block NSMutableArray *heartRates = [NSMutableArray arrayWithCapacity:self.visits.count];
     for (MVVisit *visit in self.visits) {
         dispatch_group_enter(resolve);
         [[MVHealthKit sharedInstance] fetchAverageHeartRateWithStartDate:visit.arrivalDate endDate:visit.departureDate completion:^(double averageHeartRate, NSError *error) {
-            [array addObject:@(averageHeartRate)];
+            if (averageHeartRate > 0) {
+                NSLog(@"averageHeartRate %f", averageHeartRate);
+                NSUInteger duration = [visit duration];
+                NSLog(@"duration %lu", (unsigned long)duration);
+                totalDuration += duration;
+                [heartRates addObject:@(averageHeartRate * duration)];
+            }
             dispatch_group_leave(resolve);
         }];
     }
     
     dispatch_group_notify(resolve, dispatch_get_main_queue(), ^{
-        NSNumber *average = [array valueForKeyPath:@"@avg.doubleValue"];
+        NSNumber *total = [heartRates valueForKeyPath:@"@sum.doubleValue"];
+        NSLog(@"totalDuration %lu", (unsigned long)totalDuration);
+        NSLog(@"total %@", total);
+        double average = (total.doubleValue/(float)totalDuration);
         if (completion)
-            completion(average);
+            completion(@(average));
     });
 }
 

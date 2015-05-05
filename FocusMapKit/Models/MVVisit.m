@@ -16,4 +16,9 @@
     return visit;
 }
 
+- (NSUInteger)duration;
+{
+    return [self.departureDate timeIntervalSinceDate:self.arrivalDate] / 3600;
+}
+
 @end

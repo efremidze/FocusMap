@@ -52,7 +52,9 @@
 {
     NSLog(@"didVisit %@", visit);
     if ([visit.departureDate isEqualToDate:[NSDate distantFuture]]) {
-        // User has arrived, but not left, the location
+        // User has arrived, but not left the location
+    } else if ([visit.arrivalDate isEqualToDate:[NSDate distantPast]]) {
+        // User has departed, but never arrived at the location
     } else {
         // The visit is complete
         NSManagedObjectContext *context = [NSManagedObjectContext rootSavingContext];
@@ -68,16 +70,6 @@
             [context saveToPersistentStoreAndWait];
         }];
     }
-    
-    UILocalNotification *notification = [UILocalNotification new];
-    NSMutableString *message = [NSMutableString string];
-    [message appendString:[NSString stringWithFormat:@"latitude：%f longitude：%f\n", visit.coordinate.latitude, visit.coordinate.longitude]];
-    [message appendString:[NSString stringWithFormat:@"horizontalAccuracy：%f\n", visit.horizontalAccuracy]];
-    [message appendString:[NSString stringWithFormat:@"arrivalDate：%@\n", visit.arrivalDate]];
-    if (![visit.departureDate isEqualToDate:[NSDate distantFuture]])
-        [message appendString:[NSString stringWithFormat:@"departureDate：%@\n", visit.departureDate]];
-    notification.alertBody = message;
-    [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error

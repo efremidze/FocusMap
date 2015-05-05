@@ -4,4 +4,6 @@
 
 + (MVVisit *)createVisitWithArrivalDate:(NSDate *)arrivalDate departureDate:(NSDate *)departureDate inContext:(NSManagedObjectContext *)context;
 
+- (NSUInteger)duration;
+
 @end
