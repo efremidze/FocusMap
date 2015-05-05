@@ -1,5 +1,7 @@
 #import "MVVisit.h"
 
+NSUInteger const MVDuration = 60 * 60;
+
 @interface MVVisit ()
 
 // Private interface goes here.
@@ -18,7 +20,7 @@
 
 - (NSUInteger)duration;
 {
-    return [self.departureDate timeIntervalSinceDate:self.arrivalDate] / 3600;
+    return [self.departureDate timeIntervalSinceDate:self.arrivalDate] / MVDuration;
 }
 
 @end

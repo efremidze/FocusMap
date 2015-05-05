@@ -42,9 +42,18 @@ NSString *const MVSqlitePath = @"focusMap.sqlite";
 
 - (NSArray *)locations
 {
+    if (!_locations) {
+        _locations = [self fetchLocations];
+    }
+    return _locations;
+}
+
+- (NSArray *)fetchLocations
+{
     NSManagedObjectContext *context = [NSManagedObjectContext MR_rootSavingContext];
     NSFetchRequest *request = [MVLocation MR_requestAllInContext:context];
     [request setRelationshipKeyPathsForPrefetching:@[NSStringFromSelector(@selector(visits))]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"%K > 0", NSStringFromSelector(@selector(averageHeartRate))]];
     return [MVLocation MR_executeFetchRequest:request inContext:context];
 }
 

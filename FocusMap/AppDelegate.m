@@ -32,23 +32,9 @@
     [self initHealthKit];
     [self initLocationManager];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"ANY visits.duration > 1"];
-    NSArray *array = [[MVLocation findAllWithPredicate:[NSPredicate predicateWithFormat:@"%K > 0", NSStringFromSelector(@selector(averageHeartRate))]] filteredArrayUsingPredicate:predicate];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K > 0", NSStringFromSelector(@selector(averageHeartRate))];
+    NSArray *array = [MVLocation findAllWithPredicate:predicate];
     [array makeObjectsPerformSelector:@selector(logAsString)];
-    
-    for (MVLocation *location in array) {
-        for (MVVisit *visit in location.visits) {
-            NSLog(@"visit %@", visit);
-        }
-    }
-    
-    NSManagedObjectContext *context = [NSManagedObjectContext rootSavingContext];
-    for (MVLocation *location in array) {
-        [location averageHeartRateWithCompletion:^(NSNumber *averageHeartRate) {
-            location.averageHeartRate = averageHeartRate;
-            [context saveToPersistentStoreAndWait];
-        }];
-    }
     
     return YES;
 }
@@ -144,7 +130,7 @@
 
 - (void)generateData
 {
-    double heartRate = 140;
+    double heartRate = 66;
     
     NSDate *date = [NSDate new];
     

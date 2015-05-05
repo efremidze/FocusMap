@@ -10,6 +10,8 @@
 #import "MVHealthKit.h"
 #import "MVLocation+Extras.h"
 
+NSUInteger const MVDuration = 60 * 60;
+
 @interface MVLocationManager () <CLLocationManagerDelegate>
 
 @end
@@ -55,26 +57,35 @@
         // User has arrived, but not left the location
     } else if ([visit.arrivalDate isEqualToDate:[NSDate distantPast]]) {
         // User has departed, but never arrived at the location
+    } else if ([visit.departureDate timeIntervalSinceDate:visit.arrivalDate] < MVDuration) {
+        // The visit is too short
     } else {
         // The visit is complete
-        NSManagedObjectContext *context = [NSManagedObjectContext rootSavingContext];
-        MVLocation *l = [MVLocation createLocationWithCoordinate:visit.coordinate inContext:context];
-        
-        MVVisit *v = [MVVisit createVisitWithArrivalDate:visit.arrivalDate departureDate:visit.departureDate inContext:context];
-        [l addVisitsObject:v];
-        
-        [context saveToPersistentStoreAndWait];
-        
-        [l averageHeartRateWithCompletion:^(NSNumber *averageHeartRate) {
-            l.averageHeartRate = averageHeartRate;
-            [context saveToPersistentStoreAndWait];
-        }];
+        [self saveVisit:visit];
     }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     NSLog(@"didFailWithError %@", error);
+}
+
+#pragma mark -
+
+- (void)saveVisit:(CLVisit *)visit
+{
+    NSManagedObjectContext *context = [NSManagedObjectContext rootSavingContext];
+    MVLocation *l = [MVLocation createLocationWithCoordinate:visit.coordinate inContext:context];
+    
+    MVVisit *v = [MVVisit createVisitWithArrivalDate:visit.arrivalDate departureDate:visit.departureDate inContext:context];
+    [l addVisitsObject:v];
+    
+    [context saveToPersistentStoreAndWait];
+    
+    [l averageHeartRateWithCompletion:^(NSNumber *averageHeartRate) {
+        l.averageHeartRate = averageHeartRate;
+        [context saveToPersistentStoreAndWait];
+    }];
 }
 
 @end

@@ -10,8 +10,8 @@
 
 @interface MVDataManager : NSObject
 
-+ (instancetype)sharedInstance;
+@property (nonatomic, strong) NSArray *locations;
 
-- (NSArray *)locations;
++ (instancetype)sharedInstance;
 
 @end
