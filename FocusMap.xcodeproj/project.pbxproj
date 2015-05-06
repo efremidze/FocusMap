@@ -48,7 +48,6 @@
 		8BC7BA0C1AC938AC000EC1C4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BC7BA0B1AC938AC000EC1C4 /* Images.xcassets */; };
 		8BC7BA0F1AC938AC000EC1C4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BC7BA0D1AC938AC000EC1C4 /* LaunchScreen.xib */; };
 		8BC7BA1B1AC938AC000EC1C4 /* FocusMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC7BA1A1AC938AC000EC1C4 /* FocusMapTests.m */; };
-		8BC7BA2F1AC93901000EC1C4 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC7BA2E1AC93901000EC1C4 /* InterfaceController.m */; };
 		8BC7BA321AC93901000EC1C4 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC7BA311AC93901000EC1C4 /* NotificationController.m */; };
 		8BC7BA351AC93901000EC1C4 /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC7BA341AC93901000EC1C4 /* GlanceController.m */; };
 		8BC7BA371AC93901000EC1C4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BC7BA361AC93901000EC1C4 /* Images.xcassets */; };
@@ -185,8 +184,6 @@
 		8BC7BA281AC93901000EC1C4 /* FocusMap WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "FocusMap WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BC7BA2B1AC93901000EC1C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BC7BA2C1AC93901000EC1C4 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		8BC7BA2D1AC93901000EC1C4 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
-		8BC7BA2E1AC93901000EC1C4 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
 		8BC7BA301AC93901000EC1C4 /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
 		8BC7BA311AC93901000EC1C4 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
 		8BC7BA331AC93901000EC1C4 /* GlanceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlanceController.h; sourceTree = "<group>"; };
@@ -412,8 +409,6 @@
 				8BC7BA331AC93901000EC1C4 /* GlanceController.h */,
 				8BC7BA341AC93901000EC1C4 /* GlanceController.m */,
 				8BC7BA361AC93901000EC1C4 /* Images.xcassets */,
-				8BC7BA2D1AC93901000EC1C4 /* InterfaceController.h */,
-				8BC7BA2E1AC93901000EC1C4 /* InterfaceController.m */,
 				8BC7BA501AC941EE000EC1C4 /* MapInterfaceController.h */,
 				8BC7BA511AC941EF000EC1C4 /* MapInterfaceController.m */,
 				8BC7BA301AC93901000EC1C4 /* NotificationController.h */,
@@ -837,7 +832,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "PATH=${PATH}:/usr/local/bin\nmogenerator -m FocusMapKit/Models/Model.xcdatamodeld -O FocusMapKit/Models --template-var arc=true";
+			shellScript = "PATH=${PATH}:/usr/local/bin\nmogenerator -m FocusMap/Model.xcdatamodeld -O FocusMapKit/Models --template-var arc=true";
 		};
 		AAD20544E1AA3598510CE147 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -920,7 +915,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BC7BA321AC93901000EC1C4 /* NotificationController.m in Sources */,
-				8BC7BA2F1AC93901000EC1C4 /* InterfaceController.m in Sources */,
 				8B3BC7C21ACA04DD00A176CC /* TableInterfaceController.m in Sources */,
 				8BC7BA521AC941EF000EC1C4 /* MapInterfaceController.m in Sources */,
 				8BEBD7A81AD9EC2D00EC3F82 /* EmptyTableRowInterfaceController.m in Sources */,

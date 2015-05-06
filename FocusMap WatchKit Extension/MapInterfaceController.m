@@ -14,8 +14,6 @@
 
 @property (nonatomic, weak) IBOutlet WKInterfaceMap *map;
 
-@property (nonatomic, strong) NSArray *locations;
-
 @end
 
 @implementation MapInterfaceController
@@ -23,8 +21,6 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        self.locations = [MVDataManager sharedInstance].locations;
-        
         [self load];
     }
     return self;
@@ -54,7 +50,8 @@
 - (void)load
 {
     MKMapRect mapRect = MKMapRectNull;
-    for (MVLocation *location in self.locations) {
+    NSArray *locations = [MVDataManager sharedInstance].locations;
+    for (MVLocation *location in locations) {
         MKMapPoint point = MKMapPointForCoordinate(location.coordinate);
         MKMapRect rect = (MKMapRect){point.x, point.y, 0.1, 0.1};
         mapRect = MKMapRectUnion(mapRect, rect);

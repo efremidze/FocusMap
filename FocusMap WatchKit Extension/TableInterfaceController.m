@@ -15,8 +15,6 @@
 
 @property (nonatomic, weak) IBOutlet WKInterfaceTable *table;
 
-@property (nonatomic, strong) NSArray *locations;
-
 @end
 
 @implementation TableInterfaceController
@@ -24,8 +22,6 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        self.locations = [MVDataManager sharedInstance].locations;
-        
         [self load];
     }
     return self;
@@ -54,13 +50,14 @@
 
 - (void)load
 {
-    if (self.locations.count) {
-        [self.table setNumberOfRows:self.locations.count withRowType:@"row"];
+    NSArray *locations = [MVDataManager sharedInstance].locations;
+    if (locations.count) {
+        [self.table setNumberOfRows:locations.count withRowType:@"row"];
         
-        // Create all of the table rows.
-        [self.locations enumerateObjectsUsingBlock:^(MVLocation *location, NSUInteger idx, BOOL *stop) {
+        // configure rows
+        [locations enumerateObjectsUsingBlock:^(MVLocation *location, NSUInteger idx, BOOL *stop) {
             TableRowInterfaceController *row = [self.table rowControllerAtIndex:idx];
-            row.textLabel.text = [NSString stringWithFormat:@"%f %f", location.latitudeValue, location.longitudeValue];
+            row.textLabel.text = location.name;
             row.detailTextLabel.text = [NSString stringWithFormat:@"%f", location.averageHeartRateValue];
         }];
     } else {

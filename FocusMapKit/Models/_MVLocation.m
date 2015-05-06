@@ -7,6 +7,7 @@ const struct MVLocationAttributes MVLocationAttributes = {
 	.averageHeartRate = @"averageHeartRate",
 	.latitude = @"latitude",
 	.longitude = @"longitude",
+	.name = @"name",
 };
 
 const struct MVLocationRelationships MVLocationRelationships = {
@@ -117,6 +118,8 @@ const struct MVLocationRelationships MVLocationRelationships = {
 - (void)setPrimitiveLongitudeValue:(double)value_ {
 	[self setPrimitiveLongitude:[NSNumber numberWithDouble:value_]];
 }
+
+@dynamic name;
 
 @dynamic visits;
 

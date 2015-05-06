@@ -9,6 +9,8 @@
 #import "MVLocation+Extras.h"
 #import "MVHealthKit.h"
 
+@import CoreLocation;
+
 @implementation MVLocation (Extras)
 
 - (void)averageHeartRateWithCompletion:(void (^)(NSNumber *averageHeartRate))completion;
@@ -35,6 +37,16 @@
         if (completion)
             completion(@(average));
     });
+}
+
+- (void)reverseGeocodeLocationWithCompletion:(void (^)(NSString *name))completion;
+{
+    CLGeocoder *geocoder = [CLGeocoder new];
+    [geocoder reverseGeocodeLocation:[[CLLocation alloc] initWithLatitude:self.latitudeValue longitude:self.longitudeValue] completionHandler:^(NSArray *placemarks, NSError *error) {
+        CLPlacemark *placemark = [placemarks firstObject];
+        if (completion)
+            completion(placemark.name);
+    }];
 }
 
 @end

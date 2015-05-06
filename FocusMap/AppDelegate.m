@@ -13,8 +13,6 @@
 #import "MVHealthKit.h"
 #import "MVLocationManager.h"
 
-#import "MVLocation+Extras.h"
-
 @import MessageUI;
 
 @interface AppDelegate ()
@@ -25,6 +23,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [UIApplication sharedApplication].idleTimerDisabled = YES; // TEMP
+    
     [MVDataManager sharedInstance];
     
     [self.window makeKeyAndVisible];
@@ -134,11 +134,12 @@
     
     NSDate *date = [NSDate new];
     
-    [[MVHealthKit sharedInstance] storeHeartRate:heartRate startDate:date endDate:[date dateByAddingTimeInterval:60] completion:nil];
+    [[MVHealthKit sharedInstance] storeHeartRate:heartRate startDate:date endDate:[date dateByAddingTimeInterval:60 * 60] completion:nil];
     
     NSManagedObjectContext *context = [NSManagedObjectContext rootSavingContext];
     MVLocation *location = [MVLocation createLocationWithCoordinate:CLLocationCoordinate2DMake(34.061101035425885, -118.3896881103351) inContext:context];
     location.averageHeartRateValue = heartRate;
+    location.name = @"332 S Doheny Dr";
     MVVisit *visit = [MVVisit createVisitWithArrivalDate:date departureDate:[date dateByAddingTimeInterval:60] inContext:context];
     [location addVisitsObject:visit];
     [context saveToPersistentStoreAndWait];

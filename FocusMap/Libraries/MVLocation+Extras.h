@@ -12,4 +12,6 @@
 
 - (void)averageHeartRateWithCompletion:(void (^)(NSNumber *averageHeartRate))completion;
 
+- (void)reverseGeocodeLocationWithCompletion:(void (^)(NSString *name))completion;
+
 @end

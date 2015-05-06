@@ -80,12 +80,17 @@ NSUInteger const MVDuration = 60 * 60;
     MVVisit *v = [MVVisit createVisitWithArrivalDate:visit.arrivalDate departureDate:visit.departureDate inContext:context];
     [l addVisitsObject:v];
     
-    [context saveToPersistentStoreAndWait];
-    
     [l averageHeartRateWithCompletion:^(NSNumber *averageHeartRate) {
         l.averageHeartRate = averageHeartRate;
         [context saveToPersistentStoreAndWait];
     }];
+    
+    [l reverseGeocodeLocationWithCompletion:^(NSString *name) {
+        l.name = name;
+        [context saveToPersistentStoreAndWait];
+    }];
+    
+    [context saveToPersistentStoreAndWait];
 }
 
 @end

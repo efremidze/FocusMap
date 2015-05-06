@@ -7,6 +7,7 @@ extern const struct MVLocationAttributes {
 	__unsafe_unretained NSString *averageHeartRate;
 	__unsafe_unretained NSString *latitude;
 	__unsafe_unretained NSString *longitude;
+	__unsafe_unretained NSString *name;
 } MVLocationAttributes;
 
 extern const struct MVLocationRelationships {
@@ -48,6 +49,10 @@ extern const struct MVLocationRelationships {
 
 //- (BOOL)validateLongitude:(id*)value_ error:(NSError**)error_;
 
+@property (nonatomic, strong) NSString* name;
+
+//- (BOOL)validateName:(id*)value_ error:(NSError**)error_;
+
 @property (nonatomic, strong) NSSet *visits;
 
 - (NSMutableSet*)visitsSet;
@@ -81,6 +86,9 @@ extern const struct MVLocationRelationships {
 
 - (double)primitiveLongitudeValue;
 - (void)setPrimitiveLongitudeValue:(double)value_;
+
+- (NSString*)primitiveName;
+- (void)setPrimitiveName:(NSString*)value;
 
 - (NSMutableSet*)primitiveVisits;
 - (void)setPrimitiveVisits:(NSMutableSet*)value;
