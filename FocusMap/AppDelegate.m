@@ -130,17 +130,11 @@
 
 - (void)generateData
 {
-    double heartRate = 66;
-    
-    NSDate *date = [NSDate new];
-    
-    [[MVHealthKit sharedInstance] storeHeartRate:heartRate startDate:date endDate:[date dateByAddingTimeInterval:60 * 60] completion:nil];
-    
     NSManagedObjectContext *context = [NSManagedObjectContext rootSavingContext];
     MVLocation *location = [MVLocation createLocationWithCoordinate:CLLocationCoordinate2DMake(34.061101035425885, -118.3896881103351) inContext:context];
     location.name = @"332 S Doheny Dr";
-    MVVisit *visit = [MVVisit createVisitWithArrivalDate:date departureDate:[date dateByAddingTimeInterval:60] inContext:context];
-    visit.averageHeartRateValue = heartRate;
+    MVVisit *visit = [MVVisit createVisitWithArrivalDate:[NSDate new] departureDate:[[NSDate new] dateByAddingTimeInterval:60 * 60] inContext:context];
+    visit.averageHeartRateValue = 66;
     [location addVisitsObject:visit];
     [location refreshAverageHeartRate];
     [context saveToPersistentStoreAndWait];
