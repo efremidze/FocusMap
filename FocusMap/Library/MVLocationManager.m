@@ -74,23 +74,32 @@ NSUInteger const MVDuration = 60 * 60;
 
 - (void)saveVisit:(CLVisit *)visit
 {
-    NSManagedObjectContext *context = [NSManagedObjectContext rootSavingContext];
-    MVLocation *l = [MVLocation createLocationWithCoordinate:visit.coordinate inContext:context];
-    
-    MVVisit *v = [MVVisit createVisitWithArrivalDate:visit.arrivalDate departureDate:visit.departureDate inContext:context];
-    [l addVisitsObject:v];
-    
-    [l averageHeartRateWithCompletion:^(NSNumber *averageHeartRate) {
-        l.averageHeartRate = averageHeartRate;
-        [context saveToPersistentStoreAndWait];
+    NSManagedObjectContext *savingContext  = [NSManagedObjectContext MR_rootSavingContext];
+    NSManagedObjectContext *localContext = [NSManagedObjectContext MR_contextWithParent:savingContext];
+    [localContext performBlock:^{
+        MVLocation *location = [MVLocation createLocationWithCoordinate:visit.coordinate inContext:localContext];
+        
+        MVVisit *v = [MVVisit createVisitWithArrivalDate:visit.arrivalDate departureDate:visit.departureDate inContext:localContext];
+        [location addVisitsObject:v];
+        
+        [localContext saveToPersistentStoreAndWait];
+        
+        if (!location.name) {
+            [location reverseGeocodeLocationWithCompletion:^(NSString *name) {
+                [localContext performBlock:^{
+                    location.name = name;
+                    [localContext saveToPersistentStoreWithCompletion:nil];
+                }];
+            }];
+        }
+        
+        [location averageHeartRateWithCompletion:^(NSNumber *averageHeartRate) {
+            [localContext performBlock:^{
+                location.averageHeartRate = averageHeartRate;
+                [localContext saveToPersistentStoreWithCompletion:nil];
+            }];
+        }];
     }];
-    
-    [l reverseGeocodeLocationWithCompletion:^(NSString *name) {
-        l.name = name;
-        [context saveToPersistentStoreAndWait];
-    }];
-    
-    [context saveToPersistentStoreAndWait];
 }
 
 @end

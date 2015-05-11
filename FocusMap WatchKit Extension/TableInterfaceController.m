@@ -58,7 +58,7 @@
         [locations enumerateObjectsUsingBlock:^(MVLocation *location, NSUInteger idx, BOOL *stop) {
             TableRowInterfaceController *row = [self.table rowControllerAtIndex:idx];
             row.textLabel.text = location.name;
-            row.detailTextLabel.text = [NSString stringWithFormat:@"%f", location.averageHeartRateValue];
+            row.detailTextLabel.text = [NSString stringWithFormat:@"%lu BPM", (unsigned long)location.averageHeartRateValue];
         }];
     } else {
         [self.table setNumberOfRows:1 withRowType:@"empty"];

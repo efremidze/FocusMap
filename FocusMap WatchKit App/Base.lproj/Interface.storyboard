@@ -16,18 +16,24 @@
                                     <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="kJ7-2o-9fz">
                                         <items>
                                             <label width="1" alignment="left" text="Label" id="QQ3-kn-VD7">
-                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleBody"/>
                                             </label>
-                                            <group width="1" alignment="left" id="Vhg-ff-1kG">
+                                            <group alignment="left" id="Vhg-ff-1kG">
                                                 <items>
-                                                    <imageView width="20" height="20" alignment="left" image="heart" id="KrD-qK-iFy"/>
-                                                    <label alignment="left" text="Label" id="bTp-GN-S5i"/>
+                                                    <imageView width="20" height="20" alignment="left" image="heart" contentMode="center" id="KrD-qK-iFy">
+                                                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </imageView>
+                                                    <label alignment="left" text="Label" id="bTp-GN-S5i">
+                                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </label>
                                                 </items>
                                             </group>
                                         </items>
+                                        <edgeInsets key="margins" left="7" right="0.0" top="5" bottom="5"/>
                                     </group>
                                     <connections>
                                         <outlet property="detailTextLabel" destination="bTp-GN-S5i" id="p2B-d7-usI"/>
+                                        <outlet property="image" destination="KrD-qK-iFy" id="wMl-Rv-ewb"/>
                                         <outlet property="textLabel" destination="QQ3-kn-VD7" id="8t9-NB-ReK"/>
                                     </connections>
                                 </tableRow>

@@ -13,5 +13,6 @@
 
 @property (nonatomic, weak) IBOutlet WKInterfaceLabel *textLabel;
 @property (nonatomic, weak) IBOutlet WKInterfaceLabel *detailTextLabel;
+@property (nonatomic, weak) IBOutlet WKInterfaceImage *image;
 
 @end

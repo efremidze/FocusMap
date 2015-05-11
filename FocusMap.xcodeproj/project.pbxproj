@@ -40,7 +40,9 @@
 		8B2F26291AD32C2800187FD8 /* MVVisit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F261A1AD32C2800187FD8 /* MVVisit.m */; };
 		8B3BC7C21ACA04DD00A176CC /* TableInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3BC7C11ACA04DD00A176CC /* TableInterfaceController.m */; };
 		8B3BC7C41ACA354200A176CC /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3BC7C31ACA354200A176CC /* HealthKit.framework */; };
-		8BC058E71AD36FED00C39573 /* MVLocation+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC058E61AD36FED00C39573 /* MVLocation+Extras.m */; };
+		8BB65C561AFC87460067AF7C /* MVHealthKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB65C511AFC87460067AF7C /* MVHealthKit.m */; };
+		8BB65C571AFC87460067AF7C /* MVLocation+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB65C531AFC87460067AF7C /* MVLocation+Extras.m */; };
+		8BB65C581AFC87460067AF7C /* MVLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB65C551AFC87460067AF7C /* MVLocationManager.m */; };
 		8BC7BA011AC938AC000EC1C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC7BA001AC938AC000EC1C4 /* main.m */; };
 		8BC7BA041AC938AC000EC1C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC7BA031AC938AC000EC1C4 /* AppDelegate.m */; };
 		8BC7BA071AC938AC000EC1C4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC7BA061AC938AC000EC1C4 /* ViewController.m */; };
@@ -58,8 +60,6 @@
 		8BC7BA521AC941EF000EC1C4 /* MapInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC7BA511AC941EF000EC1C4 /* MapInterfaceController.m */; };
 		8BEBD7A81AD9EC2D00EC3F82 /* EmptyTableRowInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEBD7A71AD9EC2D00EC3F82 /* EmptyTableRowInterfaceController.m */; };
 		8BEEB64C1AD330DC007B2954 /* FocusMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B2F25E91AD3205300187FD8 /* FocusMapKit.framework */; };
-		8BEEB6541AD338C0007B2954 /* MVHealthKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEEB6511AD338C0007B2954 /* MVHealthKit.m */; };
-		8BEEB6551AD338C0007B2954 /* MVLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEEB6531AD338C0007B2954 /* MVLocationManager.m */; };
 		8BEEB6581AD33C32007B2954 /* MVDataManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BEEB6561AD33C32007B2954 /* MVDataManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8BEEB6591AD33C32007B2954 /* MVDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEEB6571AD33C32007B2954 /* MVDataManager.m */; };
 		8BEEB65B1AD34044007B2954 /* FocusMapKit-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 8BEEB65A1AD34044007B2954 /* FocusMapKit-Prefix.pch */; };
@@ -166,8 +166,12 @@
 		8B3BC7C51ACA371500A176CC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8B3BC7C71ACA37A000A176CC /* FocusMap-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FocusMap-Prefix.pch"; sourceTree = "<group>"; };
 		8B4508E31ACE1CEE00D18587 /* FocusMap WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "FocusMap WatchKit Extension.entitlements"; sourceTree = "<group>"; };
-		8BC058E51AD36FED00C39573 /* MVLocation+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MVLocation+Extras.h"; sourceTree = "<group>"; };
-		8BC058E61AD36FED00C39573 /* MVLocation+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MVLocation+Extras.m"; sourceTree = "<group>"; };
+		8BB65C501AFC87460067AF7C /* MVHealthKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVHealthKit.h; sourceTree = "<group>"; };
+		8BB65C511AFC87460067AF7C /* MVHealthKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVHealthKit.m; sourceTree = "<group>"; };
+		8BB65C521AFC87460067AF7C /* MVLocation+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MVLocation+Extras.h"; sourceTree = "<group>"; };
+		8BB65C531AFC87460067AF7C /* MVLocation+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MVLocation+Extras.m"; sourceTree = "<group>"; };
+		8BB65C541AFC87460067AF7C /* MVLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVLocationManager.h; sourceTree = "<group>"; };
+		8BB65C551AFC87460067AF7C /* MVLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVLocationManager.m; sourceTree = "<group>"; };
 		8BC7B9FB1AC938AC000EC1C4 /* FocusMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FocusMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BC7B9FF1AC938AC000EC1C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BC7BA001AC938AC000EC1C4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -198,10 +202,6 @@
 		8BC7BA651AC9476C000EC1C4 /* FocusMap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FocusMap.entitlements; sourceTree = "<group>"; };
 		8BEBD7A61AD9EC2D00EC3F82 /* EmptyTableRowInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyTableRowInterfaceController.h; sourceTree = "<group>"; };
 		8BEBD7A71AD9EC2D00EC3F82 /* EmptyTableRowInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyTableRowInterfaceController.m; sourceTree = "<group>"; };
-		8BEEB6501AD338C0007B2954 /* MVHealthKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVHealthKit.h; sourceTree = "<group>"; };
-		8BEEB6511AD338C0007B2954 /* MVHealthKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVHealthKit.m; sourceTree = "<group>"; };
-		8BEEB6521AD338C0007B2954 /* MVLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVLocationManager.h; sourceTree = "<group>"; };
-		8BEEB6531AD338C0007B2954 /* MVLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVLocationManager.m; sourceTree = "<group>"; };
 		8BEEB6561AD33C32007B2954 /* MVDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVDataManager.h; sourceTree = "<group>"; };
 		8BEEB6571AD33C32007B2954 /* MVDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVDataManager.m; sourceTree = "<group>"; };
 		8BEEB65A1AD34044007B2954 /* FocusMapKit-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FocusMapKit-Prefix.pch"; sourceTree = "<group>"; };
@@ -327,6 +327,19 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		8BB65C4F1AFC87460067AF7C /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				8BB65C501AFC87460067AF7C /* MVHealthKit.h */,
+				8BB65C511AFC87460067AF7C /* MVHealthKit.m */,
+				8BB65C521AFC87460067AF7C /* MVLocation+Extras.h */,
+				8BB65C531AFC87460067AF7C /* MVLocation+Extras.m */,
+				8BB65C541AFC87460067AF7C /* MVLocationManager.h */,
+				8BB65C551AFC87460067AF7C /* MVLocationManager.m */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
 		8BC7B9F21AC938AC000EC1C4 = {
 			isa = PBXGroup;
 			children = (
@@ -363,7 +376,7 @@
 				8BC7BA651AC9476C000EC1C4 /* FocusMap.entitlements */,
 				8BC7BA0B1AC938AC000EC1C4 /* Images.xcassets */,
 				8BC7BA0D1AC938AC000EC1C4 /* LaunchScreen.xib */,
-				8BEEB64F1AD338C0007B2954 /* Libraries */,
+				8BB65C4F1AFC87460067AF7C /* Library */,
 				8BC7BA081AC938AC000EC1C4 /* Main.storyboard */,
 				8BEEB65C1AD34BC4007B2954 /* Model.xcdatamodeld */,
 				8BC7B9FE1AC938AC000EC1C4 /* Supporting Files */,
@@ -447,19 +460,6 @@
 				8BC7BA401AC93901000EC1C4 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		8BEEB64F1AD338C0007B2954 /* Libraries */ = {
-			isa = PBXGroup;
-			children = (
-				8BEEB6501AD338C0007B2954 /* MVHealthKit.h */,
-				8BEEB6511AD338C0007B2954 /* MVHealthKit.m */,
-				8BC058E51AD36FED00C39573 /* MVLocation+Extras.h */,
-				8BC058E61AD36FED00C39573 /* MVLocation+Extras.m */,
-				8BEEB6521AD338C0007B2954 /* MVLocationManager.h */,
-				8BEEB6531AD338C0007B2954 /* MVLocationManager.m */,
-			);
-			path = Libraries;
 			sourceTree = "<group>";
 		};
 		CE82198A3D4485FFE95787A2 /* Pods */ = {
@@ -892,13 +892,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BB65C581AFC87460067AF7C /* MVLocationManager.m in Sources */,
+				8BB65C571AFC87460067AF7C /* MVLocation+Extras.m in Sources */,
 				8BC7BA071AC938AC000EC1C4 /* ViewController.m in Sources */,
-				8BEEB6541AD338C0007B2954 /* MVHealthKit.m in Sources */,
-				8BEEB6551AD338C0007B2954 /* MVLocationManager.m in Sources */,
+				8BB65C561AFC87460067AF7C /* MVHealthKit.m in Sources */,
 				8BC7BA041AC938AC000EC1C4 /* AppDelegate.m in Sources */,
 				8BC7BA011AC938AC000EC1C4 /* main.m in Sources */,
 				8BEEB65E1AD34BC4007B2954 /* Model.xcdatamodeld in Sources */,
-				8BC058E71AD36FED00C39573 /* MVLocation+Extras.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

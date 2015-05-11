@@ -15,11 +15,16 @@
 
 - (void)averageHeartRateWithCompletion:(void (^)(NSNumber *averageHeartRate))completion;
 {
-    dispatch_group_t resolve = dispatch_group_create();
+    [self averageHeartRateFromVisits:self.visits withCompletion:completion];
+}
 
+- (void)averageHeartRateFromVisits:(NSSet *)visits withCompletion:(void (^)(NSNumber *))completion
+{
+    dispatch_group_t resolve = dispatch_group_create();
+    
     __block NSUInteger totalDuration = 0;
     __block NSMutableArray *heartRates = [NSMutableArray array];
-    for (MVVisit *visit in self.visits) {
+    for (MVVisit *visit in visits) {
         dispatch_group_enter(resolve);
         [[MVHealthKit sharedInstance] fetchAverageHeartRateWithStartDate:visit.arrivalDate endDate:visit.departureDate completion:^(double averageHeartRate, NSError *error) {
             if (averageHeartRate > 0) {
@@ -33,7 +38,7 @@
     
     dispatch_group_notify(resolve, dispatch_get_main_queue(), ^{
         NSNumber *total = [heartRates valueForKeyPath:@"@sum.doubleValue"];
-        NSUInteger average = (total.integerValue / totalDuration);
+        NSUInteger average = totalDuration ? (total.unsignedIntegerValue / totalDuration) : 0;
         if (completion)
             completion(@(average));
     });
@@ -41,8 +46,13 @@
 
 - (void)reverseGeocodeLocationWithCompletion:(void (^)(NSString *name))completion;
 {
+    [self reverseGeocodeLocation:CLLocationCoordinate2DMake(self.latitudeValue, self.longitudeValue) WithCompletion:completion];
+}
+
+- (void)reverseGeocodeLocation:(CLLocationCoordinate2D)coordinate WithCompletion:(void (^)(NSString *name))completion;
+{
     CLGeocoder *geocoder = [CLGeocoder new];
-    [geocoder reverseGeocodeLocation:[[CLLocation alloc] initWithLatitude:self.latitudeValue longitude:self.longitudeValue] completionHandler:^(NSArray *placemarks, NSError *error) {
+    [geocoder reverseGeocodeLocation:[[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude] completionHandler:^(NSArray *placemarks, NSError *error) {
         CLPlacemark *placemark = [placemarks firstObject];
         if (completion)
             completion(placemark.name);
