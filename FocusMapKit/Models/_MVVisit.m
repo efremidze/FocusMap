@@ -5,6 +5,7 @@
 
 const struct MVVisitAttributes MVVisitAttributes = {
 	.arrivalDate = @"arrivalDate",
+	.averageHeartRate = @"averageHeartRate",
 	.departureDate = @"departureDate",
 };
 
@@ -38,10 +39,36 @@ const struct MVVisitRelationships MVVisitRelationships = {
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {
 	NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
 
+	if ([key isEqualToString:@"averageHeartRateValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"averageHeartRate"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
+	}
+
 	return keyPaths;
 }
 
 @dynamic arrivalDate;
+
+@dynamic averageHeartRate;
+
+- (double)averageHeartRateValue {
+	NSNumber *result = [self averageHeartRate];
+	return [result doubleValue];
+}
+
+- (void)setAverageHeartRateValue:(double)value_ {
+	[self setAverageHeartRate:[NSNumber numberWithDouble:value_]];
+}
+
+- (double)primitiveAverageHeartRateValue {
+	NSNumber *result = [self primitiveAverageHeartRate];
+	return [result doubleValue];
+}
+
+- (void)setPrimitiveAverageHeartRateValue:(double)value_ {
+	[self setPrimitiveAverageHeartRate:[NSNumber numberWithDouble:value_]];
+}
 
 @dynamic departureDate;
 

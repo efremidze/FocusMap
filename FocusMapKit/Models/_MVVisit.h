@@ -5,6 +5,7 @@
 
 extern const struct MVVisitAttributes {
 	__unsafe_unretained NSString *arrivalDate;
+	__unsafe_unretained NSString *averageHeartRate;
 	__unsafe_unretained NSString *departureDate;
 } MVVisitAttributes;
 
@@ -27,6 +28,14 @@ extern const struct MVVisitRelationships {
 
 //- (BOOL)validateArrivalDate:(id*)value_ error:(NSError**)error_;
 
+@property (nonatomic, strong) NSNumber* averageHeartRate;
+
+@property (atomic) double averageHeartRateValue;
+- (double)averageHeartRateValue;
+- (void)setAverageHeartRateValue:(double)value_;
+
+//- (BOOL)validateAverageHeartRate:(id*)value_ error:(NSError**)error_;
+
 @property (nonatomic, strong) NSDate* departureDate;
 
 //- (BOOL)validateDepartureDate:(id*)value_ error:(NSError**)error_;
@@ -41,6 +50,12 @@ extern const struct MVVisitRelationships {
 
 - (NSDate*)primitiveArrivalDate;
 - (void)setPrimitiveArrivalDate:(NSDate*)value;
+
+- (NSNumber*)primitiveAverageHeartRate;
+- (void)setPrimitiveAverageHeartRate:(NSNumber*)value;
+
+- (double)primitiveAverageHeartRateValue;
+- (void)setPrimitiveAverageHeartRateValue:(double)value_;
 
 - (NSDate*)primitiveDepartureDate;
 - (void)setPrimitiveDepartureDate:(NSDate*)value;

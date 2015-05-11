@@ -41,8 +41,8 @@
 		8B3BC7C21ACA04DD00A176CC /* TableInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3BC7C11ACA04DD00A176CC /* TableInterfaceController.m */; };
 		8B3BC7C41ACA354200A176CC /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3BC7C31ACA354200A176CC /* HealthKit.framework */; };
 		8BB65C561AFC87460067AF7C /* MVHealthKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB65C511AFC87460067AF7C /* MVHealthKit.m */; };
-		8BB65C571AFC87460067AF7C /* MVLocation+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB65C531AFC87460067AF7C /* MVLocation+Extras.m */; };
 		8BB65C581AFC87460067AF7C /* MVLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB65C551AFC87460067AF7C /* MVLocationManager.m */; };
+		8BB6E67A1B01439B00D161CD /* MVVisit+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6E6791B01439B00D161CD /* MVVisit+Extras.m */; };
 		8BC7BA011AC938AC000EC1C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC7BA001AC938AC000EC1C4 /* main.m */; };
 		8BC7BA041AC938AC000EC1C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC7BA031AC938AC000EC1C4 /* AppDelegate.m */; };
 		8BC7BA071AC938AC000EC1C4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC7BA061AC938AC000EC1C4 /* ViewController.m */; };
@@ -168,10 +168,10 @@
 		8B4508E31ACE1CEE00D18587 /* FocusMap WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "FocusMap WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		8BB65C501AFC87460067AF7C /* MVHealthKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVHealthKit.h; sourceTree = "<group>"; };
 		8BB65C511AFC87460067AF7C /* MVHealthKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVHealthKit.m; sourceTree = "<group>"; };
-		8BB65C521AFC87460067AF7C /* MVLocation+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MVLocation+Extras.h"; sourceTree = "<group>"; };
-		8BB65C531AFC87460067AF7C /* MVLocation+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MVLocation+Extras.m"; sourceTree = "<group>"; };
 		8BB65C541AFC87460067AF7C /* MVLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVLocationManager.h; sourceTree = "<group>"; };
 		8BB65C551AFC87460067AF7C /* MVLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVLocationManager.m; sourceTree = "<group>"; };
+		8BB6E6781B01439B00D161CD /* MVVisit+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MVVisit+Extras.h"; sourceTree = "<group>"; };
+		8BB6E6791B01439B00D161CD /* MVVisit+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MVVisit+Extras.m"; sourceTree = "<group>"; };
 		8BC7B9FB1AC938AC000EC1C4 /* FocusMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FocusMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BC7B9FF1AC938AC000EC1C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BC7BA001AC938AC000EC1C4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -332,8 +332,8 @@
 			children = (
 				8BB65C501AFC87460067AF7C /* MVHealthKit.h */,
 				8BB65C511AFC87460067AF7C /* MVHealthKit.m */,
-				8BB65C521AFC87460067AF7C /* MVLocation+Extras.h */,
-				8BB65C531AFC87460067AF7C /* MVLocation+Extras.m */,
+				8BB6E6781B01439B00D161CD /* MVVisit+Extras.h */,
+				8BB6E6791B01439B00D161CD /* MVVisit+Extras.m */,
 				8BB65C541AFC87460067AF7C /* MVLocationManager.h */,
 				8BB65C551AFC87460067AF7C /* MVLocationManager.m */,
 			);
@@ -893,12 +893,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BB65C581AFC87460067AF7C /* MVLocationManager.m in Sources */,
-				8BB65C571AFC87460067AF7C /* MVLocation+Extras.m in Sources */,
 				8BC7BA071AC938AC000EC1C4 /* ViewController.m in Sources */,
 				8BB65C561AFC87460067AF7C /* MVHealthKit.m in Sources */,
 				8BC7BA041AC938AC000EC1C4 /* AppDelegate.m in Sources */,
 				8BC7BA011AC938AC000EC1C4 /* main.m in Sources */,
 				8BEEB65E1AD34BC4007B2954 /* Model.xcdatamodeld in Sources */,
+				8BB6E67A1B01439B00D161CD /* MVVisit+Extras.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

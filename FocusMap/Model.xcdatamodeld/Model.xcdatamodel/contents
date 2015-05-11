@@ -9,11 +9,12 @@
     </entity>
     <entity name="MVVisit" representedClassName="MVVisit" syncable="YES">
         <attribute name="arrivalDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="averageHeartRate" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="departureDate" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MVLocation" inverseName="visits" inverseEntity="MVLocation" syncable="YES"/>
     </entity>
     <elements>
         <element name="MVLocation" positionX="-63" positionY="18" width="128" height="120"/>
-        <element name="MVVisit" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="MVVisit" positionX="-63" positionY="-18" width="128" height="105"/>
     </elements>
 </model>

@@ -138,10 +138,11 @@
     
     NSManagedObjectContext *context = [NSManagedObjectContext rootSavingContext];
     MVLocation *location = [MVLocation createLocationWithCoordinate:CLLocationCoordinate2DMake(34.061101035425885, -118.3896881103351) inContext:context];
-    location.averageHeartRateValue = heartRate;
     location.name = @"332 S Doheny Dr";
     MVVisit *visit = [MVVisit createVisitWithArrivalDate:date departureDate:[date dateByAddingTimeInterval:60] inContext:context];
+    visit.averageHeartRateValue = heartRate;
     [location addVisitsObject:visit];
+    [location refreshAverageHeartRate];
     [context saveToPersistentStoreAndWait];
 }
 

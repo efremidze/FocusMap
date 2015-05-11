@@ -41,9 +41,28 @@ static double const kDegrees = 0.001;
 
 #pragma mark -
 
-- (CLLocationCoordinate2D)coordinate
+- (CLLocationCoordinate2D)coordinate;
 {
     return CLLocationCoordinate2DMake(self.latitudeValue, self.longitudeValue);
+}
+
+#pragma mark -
+
+- (void)refreshAverageHeartRate;
+{
+    NSUInteger totalDuration = 0;
+    NSUInteger totalAverageHeartRate = 0;
+    
+    for (MVVisit *visit in self.visits) {
+        NSUInteger duration = [visit duration];
+        totalDuration += duration;
+        
+        NSUInteger averageHeartRate = visit.averageHeartRateValue;
+        averageHeartRate *= duration;
+        totalAverageHeartRate += averageHeartRate;
+    }
+    
+    self.averageHeartRateValue = totalAverageHeartRate / totalDuration;
 }
 
 @end

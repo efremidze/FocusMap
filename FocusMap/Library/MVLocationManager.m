@@ -8,7 +8,7 @@
 
 #import "MVLocationManager.h"
 #import "MVHealthKit.h"
-#import "MVLocation+Extras.h"
+#import "MVVisit+Extras.h"
 
 NSUInteger const MVDuration = 60 * 60;
 
@@ -72,33 +72,63 @@ NSUInteger const MVDuration = 60 * 60;
 
 #pragma mark -
 
-- (void)saveVisit:(CLVisit *)visit
+- (void)saveVisit:(CLVisit *)clVisit
 {
-    NSManagedObjectContext *savingContext  = [NSManagedObjectContext MR_rootSavingContext];
-    NSManagedObjectContext *localContext = [NSManagedObjectContext MR_contextWithParent:savingContext];
-    [localContext performBlock:^{
-        MVLocation *location = [MVLocation createLocationWithCoordinate:visit.coordinate inContext:localContext];
+    UIApplication *application = [UIApplication sharedApplication];
+    UIBackgroundTaskIdentifier backgroundTask = [application beginBackgroundTaskWithExpirationHandler:^{
+        [application endBackgroundTask:backgroundTask];
+    }];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSManagedObjectContext *context = [NSManagedObjectContext rootSavingContext];
         
-        MVVisit *v = [MVVisit createVisitWithArrivalDate:visit.arrivalDate departureDate:visit.departureDate inContext:localContext];
-        [location addVisitsObject:v];
+        MVLocation *location = [self createLocationWithVisit:clVisit inContect:context];
         
-        [localContext saveToPersistentStoreAndWait];
+        MVVisit *visit = [self createVisitWithVisit:clVisit inContect:context];
+        [location addVisitsObject:visit];
         
-        if (!location.name) {
-            [location reverseGeocodeLocationWithCompletion:^(NSString *name) {
-                [localContext performBlock:^{
-                    location.name = name;
-                    [localContext saveToPersistentStoreWithCompletion:nil];
-                }];
-            }];
-        }
+        [location refreshAverageHeartRate];
         
-        [location averageHeartRateWithCompletion:^(NSNumber *averageHeartRate) {
-            [localContext performBlock:^{
-                location.averageHeartRate = averageHeartRate;
-                [localContext saveToPersistentStoreWithCompletion:nil];
-            }];
+        [context saveToPersistentStoreAndWait];
+        
+        [application endBackgroundTask:backgroundTask];
+    });
+}
+
+- (MVLocation *)createLocationWithVisit:(CLVisit *)clVisit inContect:(NSManagedObjectContext *)context
+{
+    __block MVLocation *location = [MVLocation createLocationWithCoordinate:clVisit.coordinate inContext:context];
+    if (!location.name) {
+        dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(location.latitudeValue, location.longitudeValue);
+        [self reverseGeocodeLocation:coordinate withCompletion:^(CLPlacemark *placemark) {
+            location.name = placemark.name;
+            dispatch_semaphore_signal(semaphore);
         }];
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    }
+    return location;
+}
+
+- (MVVisit *)createVisitWithVisit:(CLVisit *)clVisit inContect:(NSManagedObjectContext *)context
+{
+    __block MVVisit *visit = [MVVisit createVisitWithArrivalDate:clVisit.arrivalDate departureDate:clVisit.departureDate inContext:context];
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    [visit averageHeartRateWithCompletion:^(double averageHeartRate, NSError *error) {
+        visit.averageHeartRateValue = averageHeartRate;
+        dispatch_semaphore_signal(semaphore);
+    }];
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    return visit;
+}
+
+- (void)reverseGeocodeLocation:(CLLocationCoordinate2D)coordinate withCompletion:(void (^)(CLPlacemark *placemark))completion;
+{
+    CLGeocoder *geocoder = [CLGeocoder new];
+    [geocoder reverseGeocodeLocation:[[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude] completionHandler:^(NSArray *placemarks, NSError *error) {
+        CLPlacemark *placemark = [placemarks firstObject];
+        if (completion)
+            completion(placemark);
     }];
 }
 
