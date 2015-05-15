@@ -1,11 +1,13 @@
 PODS:
   - CDJSONExporter (1.0):
     - NSData+Base64
+  - FLEX (2.0.2)
   - MagicalRecord/Shorthand (2.3.0-beta.5)
   - NSData+Base64 (1.0.0)
 
 DEPENDENCIES:
   - CDJSONExporter (~> 1.0)
+  - FLEX (~> 2.0)
   - MagicalRecord/Shorthand (from `https://github.com/magicalpanda/MagicalRecord.git`,
     branch `develop`)
 
@@ -16,11 +18,12 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   MagicalRecord:
-    :commit: 11e1dcdeb78261ae6b02304707d5220dc0cf95e8
+    :commit: 07167a13dabd7a0348458dcb015af9cc579b2cc1
     :git: https://github.com/magicalpanda/MagicalRecord.git
 
 SPEC CHECKSUMS:
   CDJSONExporter: e6474fc95698ce2178dbeaa74ec1873b4a53cdec
+  FLEX: 321e6150cbababb76aaadde355dfce2ee1cac2d8
   MagicalRecord: 32760b04d86a961b38fb29413780443212a1f62d
   NSData+Base64: 4e84902c4db907a15673474677e57763ef3903e4
 

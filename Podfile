@@ -6,3 +6,4 @@ link_with 'FocusMap'
 
 pod 'MagicalRecord/Shorthand', :git => 'https://github.com/magicalpanda/MagicalRecord.git', :branch => 'develop'
 pod 'CDJSONExporter', '~> 1.0'
+pod 'FLEX', '~> 2.0'
