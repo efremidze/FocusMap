@@ -74,52 +74,44 @@ NSUInteger const MVDuration = 60 * 60;
 
 - (void)saveVisit:(CLVisit *)clVisit
 {
-    UIApplication *application = [UIApplication sharedApplication];
-    UIBackgroundTaskIdentifier backgroundTask = [application beginBackgroundTaskWithExpirationHandler:^{
-        [application endBackgroundTask:backgroundTask];
-    }];
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSManagedObjectContext *context = [NSManagedObjectContext rootSavingContext];
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+        MVLocation *location = [self createLocationWithVisit:clVisit inContect:localContext];
         
-        MVLocation *location = [self createLocationWithVisit:clVisit inContect:context];
-        
-        MVVisit *visit = [self createVisitWithVisit:clVisit inContect:context];
+        MVVisit *visit = [self createVisitWithVisit:clVisit inContect:localContext];
         [location addVisitsObject:visit];
         
         [location refreshAverageHeartRate];
-        
-        [context saveToPersistentStoreAndWait];
-        
-        [application endBackgroundTask:backgroundTask];
-    });
+    } completion:^(BOOL contextDidSave, NSError *error) {
+        UILocalNotification *notification = [UILocalNotification new];
+        NSMutableString *message = [NSMutableString string];
+        [message appendString:[NSString stringWithFormat:@"contextDidSave：%d\n", contextDidSave]];
+        [message appendString:[NSString stringWithFormat:@"error：%@", error]];
+        notification.alertBody = message;
+        [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+    }];
 }
 
 - (MVLocation *)createLocationWithVisit:(CLVisit *)clVisit inContect:(NSManagedObjectContext *)context
 {
-    __block MVLocation *location = [MVLocation createLocationWithCoordinate:clVisit.coordinate inContext:context];
+    MVLocation *location = [MVLocation createLocationWithCoordinate:clVisit.coordinate inContext:context];
     if (!location.name) {
-        dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(location.latitudeValue, location.longitudeValue);
-        [self reverseGeocodeLocation:coordinate withCompletion:^(CLPlacemark *placemark) {
-            location.name = placemark.name;
-            dispatch_semaphore_signal(semaphore);
-        }];
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+        location.name = [self nameOfLocation:location];
     }
     return location;
 }
 
-- (MVVisit *)createVisitWithVisit:(CLVisit *)clVisit inContect:(NSManagedObjectContext *)context
+// Blocks current thread
+- (NSString *)nameOfLocation:(MVLocation *)location
 {
-    __block MVVisit *visit = [MVVisit createVisitWithArrivalDate:clVisit.arrivalDate departureDate:clVisit.departureDate inContext:context];
+    __block NSString *name = nil;
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-    [visit averageHeartRateWithCompletion:^(double averageHeartRate, NSError *error) {
-        visit.averageHeartRateValue = averageHeartRate;
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(location.latitudeValue, location.longitudeValue);
+    [self reverseGeocodeLocation:coordinate withCompletion:^(CLPlacemark *placemark) {
+        name = placemark.name;
         dispatch_semaphore_signal(semaphore);
     }];
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-    return visit;
+    return name;
 }
 
 - (void)reverseGeocodeLocation:(CLLocationCoordinate2D)coordinate withCompletion:(void (^)(CLPlacemark *placemark))completion;
@@ -130,6 +122,26 @@ NSUInteger const MVDuration = 60 * 60;
         if (completion)
             completion(placemark);
     }];
+}
+
+- (MVVisit *)createVisitWithVisit:(CLVisit *)clVisit inContect:(NSManagedObjectContext *)context
+{
+    MVVisit *visit = [MVVisit createVisitWithArrivalDate:clVisit.arrivalDate departureDate:clVisit.departureDate inContext:context];
+    visit.averageHeartRateValue = [self averageHeartRateOfVisit:visit];
+    return visit;
+}
+
+// Blocks current thread
+- (double)averageHeartRateOfVisit:(MVVisit *)visit
+{
+    __block double averageHeartRate = 0;
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    [visit averageHeartRateWithCompletion:^(double heartRate, NSError *error) {
+        averageHeartRate = heartRate;
+        dispatch_semaphore_signal(semaphore);
+    }];
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    return averageHeartRate;
 }
 
 @end

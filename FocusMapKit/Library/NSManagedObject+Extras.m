@@ -10,7 +10,7 @@
 
 @implementation NSManagedObject (Extras)
 
-- (void)logAsString;
+- (NSString *)detailedDescription;
 {
     NSMutableArray *properties = [NSMutableArray array];
     for (id property in self.entity.properties) {
@@ -22,7 +22,7 @@
         } else if ([property isKindOfClass:[NSRelationshipDescription class]]) {
             NSRelationshipDescription *relationshipDescription = (NSRelationshipDescription *)property;
             NSString *name = relationshipDescription.name;
-
+            
             if (relationshipDescription.isToMany) {
                 NSMutableSet *managedObjectS = [self mutableSetValueForKey:name];
                 [properties addObject:[NSString stringWithFormat:@"%@: %lu", name, (unsigned long)managedObjectS.count]]; // displays count
@@ -33,7 +33,12 @@
             }
         }
     }
-    NSLog(@"%@: %@", [self class], [properties componentsJoinedByString:@", "]);
+    return [properties componentsJoinedByString:@", "];
+}
+
+- (void)logAsString;
+{
+    NSLog(@"%@: %@", [self class], [self detailedDescription]);
 }
 
 @end

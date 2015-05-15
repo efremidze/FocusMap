@@ -8,12 +8,10 @@
 
 #import "AppDelegate.h"
 
-#import "CDJSONExporter.h"
-
 #import "MVHealthKit.h"
 #import "MVLocationManager.h"
 
-@import MessageUI;
+#import "FLEXManager.h"
 
 @interface AppDelegate ()
 
@@ -23,7 +21,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [UIApplication sharedApplication].idleTimerDisabled = YES; // TEMP
+#if DEBUG
+    [[FLEXManager sharedManager] showExplorer];
+    
+    [UIApplication sharedApplication].idleTimerDisabled = YES;
+    
+    UIUserNotificationSettings *userNotificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:userNotificationSettings];
+#endif
     
     [MVDataManager sharedInstance];
     
@@ -31,6 +36,11 @@
     
     [self initHealthKit];
     [self initLocationManager];
+    
+//    NSArray *locations = [MVLocation findAll];
+//    [locations makeObjectsPerformSelector:@selector(logAsString)];
+//    for (MVLocation *location in locations)
+//        [location.visits makeObjectsPerformSelector:@selector(logAsString)];
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K > 0", NSStringFromSelector(@selector(averageHeartRate))];
     NSArray *array = [MVLocation findAllWithPredicate:predicate];
@@ -104,40 +114,6 @@
     } else {
         [[MVLocationManager sharedInstance] locationManager];
     }
-}
-
-#pragma mark -
-
-- (void)importData
-{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"core_data.json"];
-    NSData *data = [NSData dataWithContentsOfFile:filePath];
-    [CDJSONExporter importData:data toContext:[NSManagedObjectContext rootSavingContext] clear:YES];
-}
-
-- (void)exportData
-{
-    NSManagedObjectContext *context = [NSManagedObjectContext rootSavingContext];
-    NSData *data = [CDJSONExporter exportContext:context auxiliaryInfo:nil];
-    MFMailComposeViewController *viewController = [[MFMailComposeViewController alloc] initWithNibName:nil bundle:nil];
-    [viewController addAttachmentData:data mimeType:@"application/json" fileName:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"]];
-    [self.window.rootViewController presentViewController:viewController animated:YES completion:nil];
-}
-
-#pragma mark -
-
-- (void)generateData
-{
-    NSManagedObjectContext *context = [NSManagedObjectContext rootSavingContext];
-    MVLocation *location = [MVLocation createLocationWithCoordinate:CLLocationCoordinate2DMake(34.061101035425885, -118.3896881103351) inContext:context];
-    location.name = @"332 S Doheny Dr";
-    MVVisit *visit = [MVVisit createVisitWithArrivalDate:[NSDate new] departureDate:[[NSDate new] dateByAddingTimeInterval:60 * 60] inContext:context];
-    visit.averageHeartRateValue = 66;
-    [location addVisitsObject:visit];
-    [location refreshAverageHeartRate];
-    [context saveToPersistentStoreAndWait];
 }
 
 @end

@@ -10,6 +10,7 @@
 
 @interface NSManagedObject (Extras)
 
+- (NSString *)detailedDescription;
 - (void)logAsString;
 
 @end
