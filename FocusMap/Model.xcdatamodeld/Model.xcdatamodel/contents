@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7700" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="MVLocation" representedClassName="MVLocation" syncable="YES">
-        <attribute name="averageHeartRate" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="averageHeartRate" optional="YES" attributeType="Double" defaultValueString="-1" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -9,7 +9,7 @@
     </entity>
     <entity name="MVVisit" representedClassName="MVVisit" syncable="YES">
         <attribute name="arrivalDate" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="averageHeartRate" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="averageHeartRate" optional="YES" attributeType="Double" defaultValueString="-1" syncable="YES"/>
         <attribute name="departureDate" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MVLocation" inverseName="visits" inverseEntity="MVLocation" syncable="YES"/>
     </entity>

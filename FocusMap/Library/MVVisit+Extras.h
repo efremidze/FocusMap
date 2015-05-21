@@ -10,6 +10,8 @@
 
 @interface MVVisit (Extras)
 
-- (void)averageHeartRateWithCompletion:(void (^)(double averageHeartRate, NSError *error))completion;
+- (void)fetchAverageHeartRateWithCompletion:(void (^)(double, NSError *))completion;
+
+- (double)fetchAverageHeartRate;
 
 @end

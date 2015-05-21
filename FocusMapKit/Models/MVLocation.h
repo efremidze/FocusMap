@@ -9,6 +9,6 @@
 + (MVLocation *)createLocationWithCoordinate:(CLLocationCoordinate2D)coordinate inContext:(NSManagedObjectContext *)context;
 + (MVLocation *)locationWithCoordinate:(CLLocationCoordinate2D)coordinate inContext:(NSManagedObjectContext *)context;
 
-- (void)refreshAverageHeartRate;
+- (double)fetchAverageHeartRate;
 
 @end

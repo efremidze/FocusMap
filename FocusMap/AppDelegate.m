@@ -11,6 +11,8 @@
 #import "MVHealthKit.h"
 #import "MVLocationManager.h"
 
+#import "MVVisit+Extras.h"
+
 #import "FLEXManager.h"
 
 @interface AppDelegate ()
@@ -37,14 +39,15 @@
     [self initHealthKit];
     [self initLocationManager];
     
-//    NSArray *locations = [MVLocation findAll];
-//    [locations makeObjectsPerformSelector:@selector(logAsString)];
-//    for (MVLocation *location in locations)
-//        [location.visits makeObjectsPerformSelector:@selector(logAsString)];
-    
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K > 0", NSStringFromSelector(@selector(averageHeartRate))];
     NSArray *array = [MVLocation findAllWithPredicate:predicate];
     [array makeObjectsPerformSelector:@selector(logAsString)];
+    
+    [self refreshHeartRateDataWithCompletion:^(BOOL success, NSError *error) {
+        NSLog(@"success %d error %@", success, error);
+    }];
+    
+    [application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
     
     return YES;
 }
@@ -114,6 +117,52 @@
     } else {
         [[MVLocationManager sharedInstance] locationManager];
     }
+}
+
+#pragma mark -
+
+- (void)refreshHeartRateDataWithCompletion:(void (^)(BOOL, NSError *))completion
+{
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %d", NSStringFromSelector(@selector(averageHeartRate)), -1];
+        NSArray *visits = [MVVisit findAllWithPredicate:predicate inContext:localContext];
+        
+        for (MVVisit *visit in visits)
+            visit.averageHeartRateValue = [visit fetchAverageHeartRate];
+        
+        NSSet *locations = [NSSet setWithArray:[visits valueForKeyPath:@"location"]];
+        for (MVLocation *location in locations)
+            location.averageHeartRateValue = [location fetchAverageHeartRate];
+        
+        [visits makeObjectsPerformSelector:@selector(logAsString)];
+        [locations makeObjectsPerformSelector:@selector(logAsString)];
+    } completion:^(BOOL contextDidSave, NSError *error) {
+        if (completion)
+            completion(contextDidSave, error);
+    }];
+}
+
+#pragma mark -
+
+- (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    [self refreshHeartRateDataWithCompletion:^(BOOL success, NSError *error) {
+        if (error)
+            completionHandler(UIBackgroundFetchResultFailed);
+        else if (success)
+            completionHandler(UIBackgroundFetchResultNewData);
+        else
+            completionHandler(UIBackgroundFetchResultNoData);
+    }];
+}
+
+#pragma mark -
+
+- (void)application:(UIApplication *)application handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary *))reply
+{
+    [self refreshHeartRateDataWithCompletion:^(BOOL success, NSError *error) {
+       reply(nil);
+    }];
 }
 
 @end

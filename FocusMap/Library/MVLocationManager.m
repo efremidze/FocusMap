@@ -79,15 +79,6 @@ NSUInteger const MVDuration = 60 * 60;
         
         MVVisit *visit = [self createVisitWithVisit:clVisit inContect:localContext];
         [location addVisitsObject:visit];
-        
-        [location refreshAverageHeartRate];
-    } completion:^(BOOL contextDidSave, NSError *error) {
-        UILocalNotification *notification = [UILocalNotification new];
-        NSMutableString *message = [NSMutableString string];
-        [message appendString:[NSString stringWithFormat:@"contextDidSave：%d\n", contextDidSave]];
-        [message appendString:[NSString stringWithFormat:@"error：%@", error]];
-        notification.alertBody = message;
-        [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
     }];
 }
 
@@ -126,22 +117,7 @@ NSUInteger const MVDuration = 60 * 60;
 
 - (MVVisit *)createVisitWithVisit:(CLVisit *)clVisit inContect:(NSManagedObjectContext *)context
 {
-    MVVisit *visit = [MVVisit createVisitWithArrivalDate:clVisit.arrivalDate departureDate:clVisit.departureDate inContext:context];
-    visit.averageHeartRateValue = [self averageHeartRateOfVisit:visit];
-    return visit;
-}
-
-// Blocks current thread
-- (double)averageHeartRateOfVisit:(MVVisit *)visit
-{
-    __block double averageHeartRate = 0;
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-    [visit averageHeartRateWithCompletion:^(double heartRate, NSError *error) {
-        averageHeartRate = heartRate;
-        dispatch_semaphore_signal(semaphore);
-    }];
-    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-    return averageHeartRate;
+    return [MVVisit createVisitWithArrivalDate:clVisit.arrivalDate departureDate:clVisit.departureDate inContext:context];
 }
 
 @end

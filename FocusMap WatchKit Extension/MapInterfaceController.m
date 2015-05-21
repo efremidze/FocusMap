@@ -8,6 +8,8 @@
 
 #import "MapInterfaceController.h"
 
+#import "DataManager.h"
+
 @import FocusMapKit;
 
 @interface MapInterfaceController ()
@@ -21,7 +23,9 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        [self load];
+        [DataManager refreshData:^{
+            [self load];
+        }];
     }
     return self;
 }

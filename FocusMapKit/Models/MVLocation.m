@@ -48,23 +48,25 @@ static double const kDegrees = 0.001;
 
 #pragma mark -
 
-- (void)refreshAverageHeartRate;
+- (double)fetchAverageHeartRate;
 {
-    NSUInteger totalDuration = 0;
-    NSUInteger totalAverageHeartRate = 0;
+    double totalDuration = 0;
+    double totalAverageHeartRate = 0;
     
     for (MVVisit *visit in self.visits) {
         if (visit.averageHeartRateValue > 0) {
-            NSUInteger duration = [visit duration];
+            double duration = [visit duration];
             totalDuration += duration;
             
-            NSUInteger averageHeartRate = visit.averageHeartRateValue;
+            double averageHeartRate = visit.averageHeartRateValue;
             averageHeartRate *= duration;
             totalAverageHeartRate += averageHeartRate;
         }
     }
     
-    self.averageHeartRateValue = totalAverageHeartRate / totalDuration;
+    if (totalDuration > 0)
+        return totalAverageHeartRate / totalDuration;
+    return 0;
 }
 
 @end

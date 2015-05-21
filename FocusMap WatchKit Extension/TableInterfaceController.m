@@ -9,6 +9,8 @@
 #import "TableInterfaceController.h"
 #import "TableRowInterfaceController.h"
 
+#import "DataManager.h"
+
 @import FocusMapKit;
 
 @interface TableInterfaceController ()
@@ -22,7 +24,9 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        [self load];
+        [DataManager refreshData:^{
+            [self load];
+        }];
     }
     return self;
 }

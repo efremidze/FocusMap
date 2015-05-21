@@ -34,7 +34,7 @@
 
 #pragma mark -
 
-- (void)requestAuthorizationWithCompletion:(void (^)(BOOL success, NSError *error))completion;
+- (void)requestAuthorizationWithCompletion:(void (^)(BOOL, NSError *))completion;
 {
     if (![HKHealthStore isHealthDataAvailable]) {
         if (completion) completion(NO, [NSError errorWithDomain:@"HKErrorDomain" code:0 userInfo:@{NSLocalizedDescriptionKey: @"This device does not support HealthKit"}]);
@@ -48,19 +48,21 @@
 
 #pragma mark -
 
-- (void)fetchAverageHeartRateWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate completion:(void (^)(double, NSError *))completion
+- (void)fetchAverageHeartRateWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate completion:(void (^)(double, NSError *))completion;
 {
     HKQuantityType *quantityType = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate];
     NSPredicate *predicate = [HKQuery predicateForSamplesWithStartDate:startDate endDate:endDate options:HKQueryOptionStrictStartDate];
     HKStatisticsQuery *query = [[HKStatisticsQuery alloc] initWithQuantityType:quantityType quantitySamplePredicate:predicate options:HKStatisticsOptionDiscreteAverage completionHandler:^(HKStatisticsQuery *query, HKStatistics *result, NSError *error) {
-        double heartRateAverage = [result.averageQuantity doubleValueForUnit:[self heartBeatsPerMinuteUnit]];
+        double averageHeartRate = -1;
+        if (!error)
+            averageHeartRate = [result.averageQuantity doubleValueForUnit:[self heartBeatsPerMinuteUnit]];
         if (completion)
-            completion(heartRateAverage, error);
+            completion(averageHeartRate, error);
     }];
     [self.healthStore executeQuery:query];
 }
 
-- (void)storeHeartRate:(double)heartRate startDate:(NSDate *)startDate endDate:(NSDate *)endDate completion:(void (^)(BOOL, NSError *))completion
+- (void)storeHeartRate:(double)heartRate startDate:(NSDate *)startDate endDate:(NSDate *)endDate completion:(void (^)(BOOL, NSError *))completion;
 {
     HKQuantityType *quantityType = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate];
     HKQuantity *quantity = [HKQuantity quantityWithUnit:[self heartBeatsPerMinuteUnit] doubleValue:heartRate];

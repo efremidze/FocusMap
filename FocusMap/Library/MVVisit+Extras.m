@@ -11,12 +11,24 @@
 
 @implementation MVVisit (Extras)
 
-- (void)averageHeartRateWithCompletion:(void (^)(double averageHeartRate, NSError *error))completion;
+- (void)fetchAverageHeartRateWithCompletion:(void (^)(double, NSError *))completion;
 {
     [[MVHealthKit sharedInstance] fetchAverageHeartRateWithStartDate:self.arrivalDate endDate:self.departureDate completion:^(double averageHeartRate, NSError *error) {
         if (completion)
             completion(averageHeartRate, error);
     }];
+}
+
+- (double)fetchAverageHeartRate;
+{
+    __block double averageHeartRate;
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    [self fetchAverageHeartRateWithCompletion:^(double heartRate, NSError *error) {
+        averageHeartRate = heartRate;
+        dispatch_semaphore_signal(semaphore);
+    }];
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    return averageHeartRate;
 }
 
 @end

@@ -16,7 +16,7 @@
 
 + (instancetype)sharedInstance;
 
-- (void)requestAuthorizationWithCompletion:(void (^)(BOOL success, NSError *error))completion;
+- (void)requestAuthorizationWithCompletion:(void (^)(BOOL, NSError *))completion;
 
 - (void)fetchAverageHeartRateWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate completion:(void (^)(double, NSError *))completion;
 
