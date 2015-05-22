@@ -25,7 +25,8 @@
 {
     if (self = [super init]) {
         [DataManager refreshData:^{
-            [self load];
+            NSArray *locations = [MVDataManager sharedInstance].locations;
+            [self loadWithLocations:locations];
         }];
     }
     return self;
@@ -52,9 +53,8 @@
 
 #pragma mark -
 
-- (void)load
+- (void)loadWithLocations:(NSArray *)locations
 {
-    NSArray *locations = [MVDataManager sharedInstance].locations;
     if (locations.count) {
         [self.table setNumberOfRows:locations.count withRowType:@"row"];
         
@@ -62,7 +62,7 @@
         [locations enumerateObjectsUsingBlock:^(MVLocation *location, NSUInteger idx, BOOL *stop) {
             TableRowInterfaceController *row = [self.table rowControllerAtIndex:idx];
             row.textLabel.text = location.name;
-            row.detailTextLabel.text = [NSString stringWithFormat:@"%lu BPM", (unsigned long)location.averageHeartRateValue];
+            row.detailTextLabel.text = [NSString stringWithFormat:@"%@ BPM", [location.averageHeartRate stringValue]];
         }];
     } else {
         [self.table setNumberOfRows:1 withRowType:@"empty"];

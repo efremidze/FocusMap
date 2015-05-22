@@ -24,7 +24,8 @@
 {
     if (self = [super init]) {
         [DataManager refreshData:^{
-            [self load];
+            NSArray *locations = [MVDataManager sharedInstance].locations;
+            [self loadWithLocations:locations];
         }];
     }
     return self;
@@ -51,19 +52,23 @@
 
 #pragma mark -
 
-- (void)load
+- (void)loadWithLocations:(NSArray *)locations
 {
     MKMapRect mapRect = MKMapRectNull;
-    NSArray *locations = [MVDataManager sharedInstance].locations;
     for (MVLocation *location in locations) {
-        mapRect = ((^{
-            MKMapPoint point = MKMapPointForCoordinate(location.coordinate);
-            MKMapRect rect = (MKMapRect){point.x, point.y, 0.1, 0.1};
-            return MKMapRectUnion(mapRect, rect);
-        })());
         [self.map addAnnotation:location.coordinate withPinColor:WKInterfaceMapPinColorRed];
+        mapRect = MKMapRectAddAnnotation(mapRect, location);
     }
+    double inset = -(mapRect.size.width * 0.6f);
+    mapRect = MKMapRectInset(mapRect, inset, inset);
     [self.map setVisibleMapRect:mapRect];
 }
 
+static MKMapRect MKMapRectAddAnnotation(MKMapRect mapRect, MVLocation *location) {
+    MKMapPoint point = MKMapPointForCoordinate(location.coordinate);
+    MKMapRect rect = (MKMapRect){point.x, point.y, 0.1, 0.1};
+    if (MKMapRectIsNull(mapRect))
+        return rect;
+    return MKMapRectUnion(mapRect, rect);
+}
 @end
