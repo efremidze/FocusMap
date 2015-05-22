@@ -56,9 +56,11 @@
     MKMapRect mapRect = MKMapRectNull;
     NSArray *locations = [MVDataManager sharedInstance].locations;
     for (MVLocation *location in locations) {
-        MKMapPoint point = MKMapPointForCoordinate(location.coordinate);
-        MKMapRect rect = (MKMapRect){point.x, point.y, 0.1, 0.1};
-        mapRect = MKMapRectUnion(mapRect, rect);
+        mapRect = ((^{
+            MKMapPoint point = MKMapPointForCoordinate(location.coordinate);
+            MKMapRect rect = (MKMapRect){point.x, point.y, 0.1, 0.1};
+            return MKMapRectUnion(mapRect, rect);
+        })());
         [self.map addAnnotation:location.coordinate withPinColor:WKInterfaceMapPinColorRed];
     }
     [self.map setVisibleMapRect:mapRect];

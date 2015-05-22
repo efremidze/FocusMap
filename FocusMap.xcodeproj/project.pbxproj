@@ -40,6 +40,7 @@
 		8B2F26291AD32C2800187FD8 /* MVVisit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F261A1AD32C2800187FD8 /* MVVisit.m */; };
 		8B3BC7C21ACA04DD00A176CC /* TableInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3BC7C11ACA04DD00A176CC /* TableInterfaceController.m */; };
 		8B3BC7C41ACA354200A176CC /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3BC7C31ACA354200A176CC /* HealthKit.framework */; };
+		8B408E8A1B0EC3D2004B61B5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB14ABB1B0D67990028A809 /* MapKit.framework */; };
 		8BB14ABC1B0D67990028A809 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB14ABB1B0D67990028A809 /* MapKit.framework */; };
 		8BB14ABF1B0D6B4F0028A809 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB14ABE1B0D6B4F0028A809 /* DataManager.m */; };
 		8BB65C561AFC87460067AF7C /* MVHealthKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB65C511AFC87460067AF7C /* MVHealthKit.m */; };
@@ -239,6 +240,7 @@
 			files = (
 				8B3BC7C41ACA354200A176CC /* HealthKit.framework in Frameworks */,
 				F7AC4B5C9314236A0788C34A /* libPods.a in Frameworks */,
+				8B408E8A1B0EC3D2004B61B5 /* MapKit.framework in Frameworks */,
 				8B2F26001AD3205300187FD8 /* FocusMapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -663,7 +665,7 @@
 								enabled = 1;
 							};
 							com.apple.Maps.iOS = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
