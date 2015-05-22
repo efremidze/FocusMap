@@ -43,12 +43,17 @@ NSString *const MVSqlitePath = @"focusMap.sqlite";
 - (NSArray *)locations
 {
     if (!_locations) {
-        _locations = [self fetchLocations];
+        [self refreshLocations];
     }
     return _locations;
 }
 
-- (NSArray *)fetchLocations
+- (void)refreshLocations;
+{
+    _locations = [self fetchLocations];
+}
+
+- (NSArray *)fetchLocations;
 {
     NSManagedObjectContext *context = [NSManagedObjectContext MR_rootSavingContext];
     NSFetchRequest *request = [MVLocation MR_requestAllInContext:context];
