@@ -56,7 +56,10 @@
 {
     MKMapRect mapRect = MKMapRectNull;
     for (MVLocation *location in locations) {
-        [self.map addAnnotation:location.coordinate withPinColor:WKInterfaceMapPinColorRed];
+        NSString *imageName = [NSString stringWithFormat:@"%d", (int)location.averageHeartRateValue];
+        [self fetchImageNamed:imageName completion:^{
+            [self.map addAnnotation:location.coordinate withImageNamed:imageName centerOffset:CGPointZero];
+        }];
         mapRect = MKMapRectAddAnnotation(mapRect, location);
     }
     double inset = -(mapRect.size.width * 0.6f);
@@ -71,4 +74,28 @@ static MKMapRect MKMapRectAddAnnotation(MKMapRect mapRect, MVLocation *location)
         return rect;
     return MKMapRectUnion(mapRect, rect);
 }
+
+#pragma mark -
+
+- (void)fetchImageNamed:(NSString *)imageName completion:(void (^)(void))completion
+{
+    if (imageName.length) {
+        NSDictionary *dictionary = [WKInterfaceDevice currentDevice].cachedImages;
+        NSArray *array = [dictionary allKeys];
+        if ([array containsObject:imageName]) {
+            if (completion)
+                completion();
+        } else {
+            [WKInterfaceController openParentApplication:@{@"key": @"loadImage", @"imageName": imageName} reply:^(NSDictionary *replyInfo, NSError *error) {
+                NSData *data = replyInfo[@"data"];
+                if (data) {
+                    [[WKInterfaceDevice currentDevice] addCachedImageWithData:data name:imageName];
+                    if (completion)
+                        completion();
+                }
+            }];
+        }
+    }
+}
+
 @end
