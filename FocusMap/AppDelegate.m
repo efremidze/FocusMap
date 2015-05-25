@@ -83,6 +83,36 @@
 
 #pragma mark -
 
+- (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    [self refreshHeartRateDataWithCompletion:^(BOOL success, NSError *error) {
+        if (error)
+            completionHandler(UIBackgroundFetchResultFailed);
+        else if (success)
+            completionHandler(UIBackgroundFetchResultNewData);
+        else
+            completionHandler(UIBackgroundFetchResultNoData);
+    }];
+}
+
+#pragma mark -
+
+- (void)application:(UIApplication *)application handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary *))reply
+{
+    NSArray *locations = [[MVDataManager sharedInstance] locations];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"image == nil"];
+    locations = [locations filteredArrayUsingPredicate:predicate];
+    for (MVLocation *location in locations) {
+        location.image = [location fetchImage];
+    }
+    
+    [self refreshHeartRateDataWithCompletion:^(BOOL success, NSError *error) {
+        reply(nil);
+    }];
+}
+
+#pragma mark -
+
 - (void)initHealthKit
 {
     [[MVHealthKit sharedInstance] requestAuthorizationWithCompletion:^(BOOL success, NSError *error) {
@@ -140,36 +170,6 @@
     } completion:^(BOOL contextDidSave, NSError *error) {
         if (completion)
             completion(contextDidSave, error);
-    }];
-}
-
-#pragma mark -
-
-- (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
-{
-    [self refreshHeartRateDataWithCompletion:^(BOOL success, NSError *error) {
-        if (error)
-            completionHandler(UIBackgroundFetchResultFailed);
-        else if (success)
-            completionHandler(UIBackgroundFetchResultNewData);
-        else
-            completionHandler(UIBackgroundFetchResultNoData);
-    }];
-}
-
-#pragma mark -
-
-- (void)application:(UIApplication *)application handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary *))reply
-{
-    NSArray *locations = [[MVDataManager sharedInstance] locations];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"image == nil"];
-    locations = [locations filteredArrayUsingPredicate:predicate];
-    for (MVLocation *location in locations) {
-        location.image = [location fetchImage];
-    }
-    
-    [self refreshHeartRateDataWithCompletion:^(BOOL success, NSError *error) {
-        reply(nil);
     }];
 }
 
