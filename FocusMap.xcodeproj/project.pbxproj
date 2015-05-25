@@ -22,6 +22,8 @@
 
 /* Begin PBXBuildFile section */
 		5572052D3D9EF29D3C40B217 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B30C4EFF1A4BA403E16D04 /* libPods.a */; };
+		8B2386681B114A7F00F6C62E /* MVConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B2386661B114A7F00F6C62E /* MVConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8B2386691B114A7F00F6C62E /* MVConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2386671B114A7F00F6C62E /* MVConstants.m */; };
 		8B26459F1AD21A6100B16D3B /* TableRowInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B26459E1AD21A6100B16D3B /* TableRowInterfaceController.m */; };
 		8B2F25EE1AD3205300187FD8 /* FocusMapKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B2F25ED1AD3205300187FD8 /* FocusMapKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B2F25F41AD3205300187FD8 /* FocusMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B2F25E91AD3205300187FD8 /* FocusMapKit.framework */; };
@@ -145,6 +147,8 @@
 /* Begin PBXFileReference section */
 		00B30C4EFF1A4BA403E16D04 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		22CCD49310751B0D7BC1E2AD /* libPods-FocusMapKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FocusMapKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B2386661B114A7F00F6C62E /* MVConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVConstants.h; sourceTree = "<group>"; };
+		8B2386671B114A7F00F6C62E /* MVConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVConstants.m; sourceTree = "<group>"; };
 		8B26459D1AD21A6100B16D3B /* TableRowInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableRowInterfaceController.h; sourceTree = "<group>"; };
 		8B26459E1AD21A6100B16D3B /* TableRowInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableRowInterfaceController.m; sourceTree = "<group>"; };
 		8B2F25E91AD3205300187FD8 /* FocusMapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FocusMapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -316,6 +320,8 @@
 				8BEEB6571AD33C32007B2954 /* MVDataManager.m */,
 				8B2F260C1AD32C2800187FD8 /* NSManagedObject+Extras.h */,
 				8B2F260D1AD32C2800187FD8 /* NSManagedObject+Extras.m */,
+				8B2386661B114A7F00F6C62E /* MVConstants.h */,
+				8B2386671B114A7F00F6C62E /* MVConstants.m */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -508,6 +514,7 @@
 				8B2F261D1AD32C2800187FD8 /* NSManagedObject+Extras.h in Headers */,
 				8B2F26261AD32C2800187FD8 /* MVLocation.h in Headers */,
 				8B2F26281AD32C2800187FD8 /* MVVisit.h in Headers */,
+				8B2386681B114A7F00F6C62E /* MVConstants.h in Headers */,
 				8BEEB6581AD33C32007B2954 /* MVDataManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -883,6 +890,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BEEB6591AD33C32007B2954 /* MVDataManager.m in Sources */,
+				8B2386691B114A7F00F6C62E /* MVConstants.m in Sources */,
 				8B2F261E1AD32C2800187FD8 /* NSManagedObject+Extras.m in Sources */,
 				8B2F26271AD32C2800187FD8 /* MVLocation.m in Sources */,
 				8B2F26241AD32C2800187FD8 /* _MVVisit.m in Sources */,

@@ -16,4 +16,9 @@
 
 - (void)refreshLocations;
 
+- (void)setImage:(UIImage *)image withName:(NSString *)name;
+- (UIImage *)imageWithName:(NSString *)name;
+
+- (NSString *)imageNameForLocation:(MVLocation *)location;
+
 @end

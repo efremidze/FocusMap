@@ -62,4 +62,33 @@ NSString *const MVSqlitePath = @"focusMap.sqlite";
     return [MVLocation MR_executeFetchRequest:request inContext:context];
 }
 
+#pragma mark -
+
+- (void)setImage:(UIImage *)image withName:(NSString *)name;
+{
+    NSURL *url = [self filePathForImageName:name];
+    NSData *data = UIImagePNGRepresentation(image);
+    [data writeToURL:url atomically:YES];
+}
+
+- (UIImage *)imageWithName:(NSString *)name;
+{
+    NSURL *url = [self filePathForImageName:name];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    return [UIImage imageWithData:data];
+}
+
+- (NSURL *)filePathForImageName:(NSString *)name;
+{
+    NSURL *containerURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:MVAppGroup];
+    return [containerURL URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", name]];
+}
+
+#pragma mark -
+
+- (NSString *)imageNameForLocation:(MVLocation *)location;
+{
+    return [NSString stringWithFormat:@"%d", (int)location.averageHeartRateValue];
+}
+
 @end

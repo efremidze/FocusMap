@@ -50,14 +50,6 @@
     [self.mapView setVisibleMapRect:mapRect animated:NO];
 }
 
-static MKMapRect MKMapRectAddAnnotation(MKMapRect mapRect, MKPointAnnotation *annotation) {
-    MKMapPoint point = MKMapPointForCoordinate(annotation.coordinate);
-    MKMapRect rect = (MKMapRect){point.x, point.y, 0.1, 0.1};
-    if (MKMapRectIsNull(mapRect))
-        return rect;
-    return MKMapRectUnion(mapRect, rect);
-}
-
 - (MKPointAnnotation *)annotationForLocation:(MVLocation *)location
 {
     MKPointAnnotation *pointAnnotation = [MKPointAnnotation new];

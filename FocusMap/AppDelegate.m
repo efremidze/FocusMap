@@ -160,15 +160,17 @@
 
 - (void)application:(UIApplication *)application handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary *))reply
 {
-    if ([userInfo[@"key"] isEqualToString:@"loadImage"]) {
-        NSString *imageName = userInfo[@"imageName"];
-        UIImage *image = [self imageName:imageName];
-        NSData *data = UIImagePNGRepresentation(image);
-        reply(@{@"data": data});
-    } else {
-        [self refreshHeartRateDataWithCompletion:^(BOOL success, NSError *error) {
-            reply(nil);
-        }];
+    [self refreshHeartRateDataWithCompletion:^(BOOL success, NSError *error) {
+        reply(nil);
+    }];
+    
+    NSArray *locations = [[MVDataManager sharedInstance] locations];
+    for (MVLocation *location in locations) {
+        NSString *imageName = [[MVDataManager sharedInstance] imageNameForLocation:location];
+        if (![[MVDataManager sharedInstance] imageWithName:imageName]) {
+            UIImage *image = [self imageName:imageName];
+            [[MVDataManager sharedInstance] setImage:image withName:imageName];
+        }
     }
 }
 

@@ -23,3 +23,6 @@ FOUNDATION_EXPORT const unsigned char FocusMapKitVersionString[];
 
 // Categories
 #import <FocusMapKit/NSManagedObject+Extras.h>
+
+// Libaries
+#import <FocusMapKit/MVConstants.h>

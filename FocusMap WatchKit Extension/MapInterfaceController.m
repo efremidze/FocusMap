@@ -56,10 +56,7 @@
 {
     MKMapRect mapRect = MKMapRectNull;
     for (MVLocation *location in locations) {
-        NSString *imageName = [NSString stringWithFormat:@"%d", (int)location.averageHeartRateValue];
-        [self fetchImageNamed:imageName completion:^{
-            [self.map addAnnotation:location.coordinate withImageNamed:imageName centerOffset:CGPointZero];
-        }];
+        [self addAnnotationWithLocation:location];
         mapRect = MKMapRectAddAnnotation(mapRect, location);
     }
     double inset = -(mapRect.size.width * 0.6f);
@@ -67,34 +64,19 @@
     [self.map setVisibleMapRect:mapRect];
 }
 
-static MKMapRect MKMapRectAddAnnotation(MKMapRect mapRect, MVLocation *location) {
-    MKMapPoint point = MKMapPointForCoordinate(location.coordinate);
-    MKMapRect rect = (MKMapRect){point.x, point.y, 0.1, 0.1};
-    if (MKMapRectIsNull(mapRect))
-        return rect;
-    return MKMapRectUnion(mapRect, rect);
-}
-
 #pragma mark -
 
-- (void)fetchImageNamed:(NSString *)imageName completion:(void (^)(void))completion
+- (void)addAnnotationWithLocation:(MVLocation *)location
 {
+    NSString *imageName = [[MVDataManager sharedInstance] imageNameForLocation:location];
     if (imageName.length) {
         NSDictionary *dictionary = [WKInterfaceDevice currentDevice].cachedImages;
         NSArray *array = [dictionary allKeys];
-        if ([array containsObject:imageName]) {
-            if (completion)
-                completion();
-        } else {
-            [WKInterfaceController openParentApplication:@{@"key": @"loadImage", @"imageName": imageName} reply:^(NSDictionary *replyInfo, NSError *error) {
-                NSData *data = replyInfo[@"data"];
-                if (data) {
-                    [[WKInterfaceDevice currentDevice] addCachedImageWithData:data name:imageName];
-                    if (completion)
-                        completion();
-                }
-            }];
+        if (![array containsObject:imageName]) {
+            UIImage *image = [[MVDataManager sharedInstance] imageWithName:imageName];
+            [[WKInterfaceDevice currentDevice] addCachedImage:image name:imageName];
         }
+        [self.map addAnnotation:location.coordinate withImageNamed:imageName centerOffset:CGPointZero];
     }
 }
 
