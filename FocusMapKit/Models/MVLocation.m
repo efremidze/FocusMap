@@ -1,5 +1,7 @@
 #import "MVLocation.h"
 
+#import "MVDataManager.h"
+
 static double const kDegrees = 0.001;
 
 @interface MVLocation ()
@@ -67,6 +69,25 @@ static double const kDegrees = 0.001;
     if (totalDuration > 0)
         return totalAverageHeartRate / totalDuration;
     return 0;
+}
+
+- (NSString *)averageHeartRateString;
+{
+    return [NSString stringWithFormat:@"%d", (int)self.averageHeartRateValue];
+}
+
+#pragma mark -
+
+- (void)setImage:(UIImage *)image;
+{
+    NSString *imageName = [self averageHeartRateString];
+    [[MVDataManager sharedInstance] setImage:image withName:imageName];
+}
+
+- (UIImage *)image;
+{
+    NSString *imageName = [self averageHeartRateString];
+    return [[MVDataManager sharedInstance] imageWithName:imageName];
 }
 
 @end

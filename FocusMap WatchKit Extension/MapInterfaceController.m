@@ -68,12 +68,12 @@
 
 - (void)addAnnotationWithLocation:(MVLocation *)location
 {
-    NSString *imageName = [[MVDataManager sharedInstance] imageNameForLocation:location];
+    NSString *imageName = [location averageHeartRateString];
     if (imageName.length) {
         NSDictionary *dictionary = [WKInterfaceDevice currentDevice].cachedImages;
         NSArray *array = [dictionary allKeys];
         if (![array containsObject:imageName]) {
-            UIImage *image = [[MVDataManager sharedInstance] imageWithName:imageName];
+            UIImage *image = [location image];
             [[WKInterfaceDevice currentDevice] addCachedImage:image name:imageName];
         }
         [self.map addAnnotation:location.coordinate withImageNamed:imageName centerOffset:CGPointZero];

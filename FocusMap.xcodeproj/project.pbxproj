@@ -43,6 +43,8 @@
 		8B3BC7C21ACA04DD00A176CC /* TableInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3BC7C11ACA04DD00A176CC /* TableInterfaceController.m */; };
 		8B3BC7C41ACA354200A176CC /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3BC7C31ACA354200A176CC /* HealthKit.framework */; };
 		8B408E8A1B0EC3D2004B61B5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB14ABB1B0D67990028A809 /* MapKit.framework */; };
+		8B9684AC1B12C0A500D093A1 /* MVLocation+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9684AB1B12C0A500D093A1 /* MVLocation+Extras.m */; };
+		8B9684AF1B12C12200D093A1 /* UIImage+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9684AE1B12C12200D093A1 /* UIImage+Extras.m */; };
 		8BB14ABC1B0D67990028A809 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB14ABB1B0D67990028A809 /* MapKit.framework */; };
 		8BB14ABF1B0D6B4F0028A809 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB14ABE1B0D6B4F0028A809 /* DataManager.m */; };
 		8BB65C561AFC87460067AF7C /* MVHealthKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB65C511AFC87460067AF7C /* MVHealthKit.m */; };
@@ -173,6 +175,10 @@
 		8B3BC7C51ACA371500A176CC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8B3BC7C71ACA37A000A176CC /* FocusMap-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FocusMap-Prefix.pch"; sourceTree = "<group>"; };
 		8B4508E31ACE1CEE00D18587 /* FocusMap WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "FocusMap WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		8B9684AA1B12C0A500D093A1 /* MVLocation+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MVLocation+Extras.h"; sourceTree = "<group>"; };
+		8B9684AB1B12C0A500D093A1 /* MVLocation+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MVLocation+Extras.m"; sourceTree = "<group>"; };
+		8B9684AD1B12C12200D093A1 /* UIImage+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extras.h"; sourceTree = "<group>"; };
+		8B9684AE1B12C12200D093A1 /* UIImage+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extras.m"; sourceTree = "<group>"; };
 		8BB14ABB1B0D67990028A809 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8BB14ABD1B0D6B4F0028A809 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		8BB14ABE1B0D6B4F0028A809 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
@@ -346,10 +352,14 @@
 			children = (
 				8BB65C501AFC87460067AF7C /* MVHealthKit.h */,
 				8BB65C511AFC87460067AF7C /* MVHealthKit.m */,
-				8BB6E6781B01439B00D161CD /* MVVisit+Extras.h */,
-				8BB6E6791B01439B00D161CD /* MVVisit+Extras.m */,
+				8B9684AA1B12C0A500D093A1 /* MVLocation+Extras.h */,
+				8B9684AB1B12C0A500D093A1 /* MVLocation+Extras.m */,
 				8BB65C541AFC87460067AF7C /* MVLocationManager.h */,
 				8BB65C551AFC87460067AF7C /* MVLocationManager.m */,
+				8BB6E6781B01439B00D161CD /* MVVisit+Extras.h */,
+				8BB6E6791B01439B00D161CD /* MVVisit+Extras.m */,
+				8B9684AD1B12C12200D093A1 /* UIImage+Extras.h */,
+				8B9684AE1B12C12200D093A1 /* UIImage+Extras.m */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -912,9 +922,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BB65C581AFC87460067AF7C /* MVLocationManager.m in Sources */,
+				8B9684AF1B12C12200D093A1 /* UIImage+Extras.m in Sources */,
 				8BC7BA071AC938AC000EC1C4 /* ViewController.m in Sources */,
 				8BB65C561AFC87460067AF7C /* MVHealthKit.m in Sources */,
 				8BC7BA041AC938AC000EC1C4 /* AppDelegate.m in Sources */,
+				8B9684AC1B12C0A500D093A1 /* MVLocation+Extras.m in Sources */,
 				8BC7BA011AC938AC000EC1C4 /* main.m in Sources */,
 				8BEEB65E1AD34BC4007B2954 /* Model.xcdatamodeld in Sources */,
 				8BB6E67A1B01439B00D161CD /* MVVisit+Extras.m in Sources */,

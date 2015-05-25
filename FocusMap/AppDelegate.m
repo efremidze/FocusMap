@@ -11,6 +11,7 @@
 #import "MVHealthKit.h"
 #import "MVLocationManager.h"
 
+#import "MVLocation+Extras.h"
 #import "MVVisit+Extras.h"
 
 #import "FLEXManager.h"
@@ -160,55 +161,16 @@
 
 - (void)application:(UIApplication *)application handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary *))reply
 {
+    NSArray *locations = [[MVDataManager sharedInstance] locations];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"image == nil"];
+    locations = [locations filteredArrayUsingPredicate:predicate];
+    for (MVLocation *location in locations) {
+        location.image = [location fetchImage];
+    }
+    
     [self refreshHeartRateDataWithCompletion:^(BOOL success, NSError *error) {
         reply(nil);
     }];
-    
-    NSArray *locations = [[MVDataManager sharedInstance] locations];
-    for (MVLocation *location in locations) {
-        NSString *imageName = [[MVDataManager sharedInstance] imageNameForLocation:location];
-        if (![[MVDataManager sharedInstance] imageWithName:imageName]) {
-            UIImage *image = [self imageName:imageName];
-            [[MVDataManager sharedInstance] setImage:image withName:imageName];
-        }
-    }
-}
-
-- (UIImage *)imageName:(NSString *)imageName
-{
-    CALayer *layer = [CALayer layer];
-    layer.frame = CGRectMake(0, 0, 12, 12);
-    layer.cornerRadius = layer.frame.size.width / 2.0f;
-    layer.borderColor = [UIColor whiteColor].CGColor;
-    layer.borderWidth = 0.5f;
-    layer.backgroundColor = [UIColor redColor].CGColor;
-    layer.contentsScale = [[UIScreen mainScreen] scale];
-    
-    CATextLayer *textLayer = [self layerWithString:imageName];
-    [layer addSublayer:textLayer];
-    
-    return [self imageFromLayer:layer];
-}
-
-- (CATextLayer *)layerWithString:(NSString *)string
-{
-    CATextLayer *textLayer = [CATextLayer layer];
-    textLayer.frame = CGRectMake(1, 1, 10, 10);
-    textLayer.foregroundColor = [UIColor whiteColor].CGColor;
-    textLayer.string = string;
-    textLayer.fontSize = 8.0f;
-    textLayer.alignmentMode = kCAAlignmentCenter;
-    textLayer.contentsScale = [[UIScreen mainScreen] scale];
-    return textLayer;
-}
-
-- (UIImage *)imageFromLayer:(CALayer *)layer
-{
-    UIGraphicsBeginImageContextWithOptions(layer.frame.size, layer.opaque, [[UIScreen mainScreen] scale]);
-    [layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return image;
 }
 
 @end
